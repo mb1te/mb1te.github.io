@@ -162,6 +162,6 @@ body {
 
 .images {
     height: 720px;
+    width: 100%;
     background-image: url(../images/bg.jpg);
-    background-repeat: property;
 }
