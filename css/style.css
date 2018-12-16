@@ -1,0 +1,167 @@
+body {
+    background: #fdfa72;
+    margin: 0;
+}
+
+.menu {
+    width: 100%;
+    height: 128px;
+    background: red;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 32px;
+}
+
+.menu ul li {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+}
+
+.menu ul li a {
+    margin: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: #ffd800;
+    text-shadow: 3px 3px 5px black;
+    text-decoration: none;
+}
+
+.main_h1 {
+    color: #c90000;
+    text-align: center;
+    font-size: 60px;
+}
+
+.main_p, .second_p {
+    color: #c90000;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main_list {
+    display: inline-block;
+    position: relative;
+    left: 35%;
+}
+
+.main_list > li {
+    color: #c90000;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.list1 {
+    color: #c90000;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+.list2 {
+    color: #c90000;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    bottom: 630px;
+    left: 900px;
+}
+
+.all {
+    margin: 5px;
+    padding: 5px;
+    border: 1px dotted white;
+}
+
+.table {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    padding: 0;
+    display: table;
+    background-color: #d9edf7;
+    border-color: #3a87ad;
+}
+
+.row {
+    display: table-row;
+    background-color: #f2dede;
+    border-color: #b94a48;
+}
+
+.cell {
+    display: table-cell;
+    background-color: #fbeed5;
+    border-color: #c09853;
+    color: #c90000;
+}
+
+.rowspan-l {
+    border-right: 0;
+}
+
+.rowspan-r {
+    border-left: 0;
+}
+
+.colspan-t {
+    border-bottom: 0;
+}
+
+.colspan-b {
+    border-top: 0;
+}
+
+.images > img {
+    width: 200px;
+}
+
+.arch {
+    position: absolute;
+    top: 400px;
+    left: 50px;
+}
+
+.debian {
+    position: relative;
+    top: 150px;
+    left: 30px;
+}
+
+.red {
+    background-color: red;
+    color: yellow;
+}
+
+.tblue {
+    color: blue;
+}
+
+.google {
+    position: absolute;
+    left: 350px;
+    top: 400px;
+}
+
+.microsoft {
+    position: relative;
+    right: 500px;
+    bottom: 120px;
+}
+
+.mint {
+    position: absolute;
+    left: 900px;
+    top: 400px;
+}
+
+.images {
+    height: 720px;
+    background-image: url(../images/bg.jpg);
+    background-repeat: property;
+}
