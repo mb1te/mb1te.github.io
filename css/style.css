@@ -160,8 +160,7 @@ body {
     top: 400px;
 }
 
-.images {
-    height: 720px;
-    width: 100%;
+body {
     background-image: url(../images/bg.jpg);
+    background-size: cover;
 }
