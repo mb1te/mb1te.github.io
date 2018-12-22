@@ -1,0 +1,85 @@
+.page {
+	margin: 0;
+	padding: 0;
+	font: 14px Arial;
+}
+
+p, h1, h2, h3, h4, h5, h6, a {
+	margin: 0;
+	padding: 0;
+}
+
+.form-case {
+	padding: 50px 100px;
+	background: linear-gradient(to bottom right, #272840, #0B0212);
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+.student {
+	width: 65%;
+}
+
+.form-header {
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 30px;
+	letter-spacing: 5px;
+}
+
+.form__fieldset {
+	padding: 35px 50px;
+	margin-bottom: 40px;
+}
+
+.form__legend {
+	font-size: 20px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+}
+
+.form__line-case {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.form__line {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.form__line:last-child {
+	margin-bottom: 0;
+}
+
+.form__label {
+	min-width: 100px;
+	max-width: 100px;
+	margin-right: 50px;
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+.form-field {
+	width: 100%;
+	margin-right: 10px;
+}
+
+.form-field:last-child {
+	margin-right: 0;
+}
+
+.form__input {
+	width: 100%;
+	
+}
+
+.form__textarea {
+	width: 100%;
+}

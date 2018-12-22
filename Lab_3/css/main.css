@@ -1,0 +1,70 @@
+p, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	padding: 50px 20px;
+}
+
+.table {
+	width: 100%;
+	margin-bottom: 100px;
+}
+
+.schedule .table__caption {
+	letter-spacing: 0.5em;
+}
+
+.schedule .table__header {
+	border-left: 15px solid #fff;
+	height: 50px;
+}
+
+.schedule .table__header:first-child {
+	border-left: none;
+}
+
+.schedule .table__caption {
+	font-size: 50px;
+	margin-bottom: 25px;
+}
+
+.schedule__header-box .table__header {
+	background: #3a006e;
+	color: #fff;
+}
+
+.schedule .table__header, .schedule .table__cell {
+	padding: 0px 5px;
+}
+
+.schedule .table__header {
+	font-size: 25px;
+}
+
+.schedule .table__cell {
+	font-size: 16px;
+	background: #e6dbff;
+	height: 45px;
+}
+
+.schedule__l {
+	font-weight: bold;
+	background: #8e51c4 !important;
+	color: #fff;
+}
+
+.schedule__p {
+	font-weight: bold;
+	background: #512d70 !important;
+	color: #fff;
+}
+
+.table__row .schedule__l, .table__row .schedule__p, .table__row .schedule__empty {
+	border-left: 15px solid #fff;
+}
+
+.table__row .schedule__l:first-child, .table__row .schedule__p:first-child, .table__row .schedule__empty:first-child {
+	border-left: none;
+}

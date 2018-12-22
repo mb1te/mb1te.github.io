@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>lab_5</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page">
+	<div class="form-case">
+		<h1 class="form-header">Анкета студента</h1>
+		
+		
+		
+		
+		<form action="#" method="get" class="form student">
+		
+			<fieldset class="form__fieldset student__personal">
+				<legend class="form__legend">Личная информация</legend>
+				<div class="form__line-case">
+					<div class="form__line">
+						<div class="form__label">
+							ФИО
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Имя" class="form__input student__name">
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Фамилия" class="form__input student__lastname">
+						</div>
+					</div>
+					<div class="form__line">
+						<div class="form__label">
+							Мобильный телефон
+						</div>
+						<div class="form-field">
+							<input type="tel" pattern="+[0-9]{11}" placeholder="+79781112233" class="form__input student__phone">
+						</div>
+					</div>
+					<div class="form__line">
+						<div class="form__label">
+							E-mail
+						</div>
+						<div class="form-field">
+							<input type="email" placeholder="example@yandex.ru" class="form__input student__email">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset class="form__fieldset student__parents">
+				<legend class="form__legend">Данные о родителях</legend>
+				<div class="form__line-case">
+					<div class="form__line">
+						<div class="form__label">
+							Мать
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Имя" class="form__input student__m-name">
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Фамилия" class="form__input student__m-lastname">
+						</div>
+					</div>
+					<div class="form__line">
+						<div class="form__label">
+							Отец
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Имя" class="form__input student__f-name">
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Фамилия" class="form__input student__f-lastname">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset class="form__fieldset student__study">
+				<legend class="form__legend">Место учёбы</legend>
+				<div class="form__line-case">
+					<div class="form__line">
+						<div class="form__label">
+							ВУЗ
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Название ВУЗа" class="form__input student__university">
+						</div>
+					</div>
+					<div class="form__line">
+						<div class="form__label"></div>
+						<div class="form-field">
+							<input type="text" placeholder="Факультет" class="form__input student__faculty">
+						</div>
+						<div class="form-field">
+							<input type="text" placeholder="Специальность" class="form__input student__speciality">
+						</div>
+					</div>
+					<div class="form__line">
+						<div class="form__label">
+							Курс
+						</div>
+						<select class="form-select">
+							<optgroup label="Бакалавриат">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</optgroup>
+							<optgroup label="Магистратура">
+								<option value="5">5</option>
+								<option value="6">6</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset class="form__fieldset student__study">
+				<legend class="form__legend">Сообщение администрации</legend>
+				<div class="form__line-case">
+					<div class="form__line">
+						<div class="form-field">
+							<textarea rows="10" placeholder="Здесь напишите своё сообщение для администрации вашего ВУЗа и мы его им доставим!" class="form__textarea"></textarea>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+		</form>
+		
+		
+		
+	</div>
+</body>
+</html>

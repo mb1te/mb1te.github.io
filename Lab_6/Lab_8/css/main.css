@@ -1,0 +1,70 @@
+p, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.page {
+	margin: 0;
+	padding: 0;
+}
+
+.page__section {
+	padding: 0 100px;
+}
+
+.header {
+	height: 100vh;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/main_bg.JPG) center top /cover no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+
+.header__main-h {
+	font: bold 70px Arial;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+}
+
+.sep-line {
+	width: 50%;
+	height: 2px;
+	background-color: #fff;
+	margin: 50px 0;
+}
+
+.header__sub-h {
+	text-align: center;
+	display: block;
+	width: 40%;
+	text-transform: lowercase;
+	font: small-caps 20px Arial;
+}
+
+.section__header {
+	font: bold 50px Arial;
+	letter-spacing: 5px;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.two-column {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.two-column .section__imb-box {
+	width: 50%;
+	flex-shrink: 0;
+}
+
+.two-column .section__text-box {
+	/*width: 70%;*/
+}
+
+.section__img {
+	width: 100%;
+}

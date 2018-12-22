@@ -1,0 +1,101 @@
+html {
+	color: #fff;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.page {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+.page__section {
+	padding: 100px 100px;
+	color: #fff;
+	line-height: 30px;
+}
+
+.header {
+	height: 100vh;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/main_bg.JPG) center top /cover no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+
+.header__main-h {
+	font: bold 70px Arial;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+}
+
+.sep-line {
+	width: 50%;
+	height: 2px;
+	background-color: #fff;
+	margin: 50px 0;
+}
+
+.header__sub-h {
+	text-align: center;
+	display: block;
+	width: 40%;
+	text-transform: lowercase;
+	font: small-caps 20px Arial;
+}
+
+.section__header {
+	font: bold 50px Arial;
+	letter-spacing: 5px;
+	margin-bottom: 50px;
+	color: #000;
+}
+
+.two-column {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+}
+
+.two-column .section__imb-box {
+	width: 50%;
+	flex-shrink: 0;
+}
+
+.two-column .section__text-box {
+	margin-right: 100px;
+	color: #fff;
+}
+
+.section__img {
+	width: 100%;
+}
+
+.section__text {
+	color: #000;
+}
+
+.section_black-theme {
+	background-color: #000;
+}
+
+.section_black-theme .section__text {
+	color: #fff;
+}
+
+.section_black-theme .section__header {
+	color: #fff;
+}
+
+.footer{
+	padding: 100px 100px;
+	color: #000;
+	text-align: center;
+}

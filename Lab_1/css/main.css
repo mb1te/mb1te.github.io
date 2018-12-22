@@ -1,0 +1,102 @@
+body {
+	margin: 0;
+	font-family: 'Muli', sans-serif;
+	color: #000;
+	font-size: 20px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+}
+
+.header {
+	padding: 50px 100px;
+	background: url(../img/bg1.jpg) no-repeat center bottom / cover;
+	height: 600px;
+}
+
+.header__text {
+   	font-size: 80px;
+   	font-weight: bold;
+	letter-spacing: 25px;
+	color: #fff;
+	text-transform: uppercase;
+	margin-top: 40px;
+}
+
+.header__subtext {
+	font-size: 30px;
+	letter-spacing: 3px;
+	color: #fff;
+	font-weight: normal;
+	margin-top: 0px;
+}
+
+.partition {
+	padding: 100px 100px;
+}
+
+.partition__title {
+	font-size: 60px;
+	letter-spacing: 3px;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+.partition__text {
+	font-size: 16px;
+}
+
+.partition__box {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+.car-item {
+	padding: 25px;
+	width: 27%;
+	border: 1px dashed #555;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.car-item__name {
+	font-size: 25px;
+	letter-spacing: 3px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+
+.car-item__description {
+	font-size: 14px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.car-item__img-box {
+	
+}
+
+.car-item__img {
+	width: 100%;
+}
+
+.line {
+	height: 1px;
+	background: #999;
+}
+
+.footer {
+	padding: 25px 100px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer__text {
+	font-size: 15px;
+	color: #777;
+}
