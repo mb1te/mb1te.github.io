@@ -22,7 +22,7 @@ c.fill();
 c.fillStyle = "black"
 for (i = 0; i < 3; i++) {
     let x = 50, y = 375 + 70 * i
-    c.fillRect(x,y,850,35)
+    c.fillRect(x,y,500,35)
 }
 
 c.fillStyle = "white"
