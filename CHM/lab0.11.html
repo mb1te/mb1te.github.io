@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 11</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor=>
+<table width="100%" border="0">
+  <tr>
+   <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%"></td>
+   <td>
+       <h3 align="center">&nbsp;</h3>
+<h3 align="center"><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 11 <br>МЕТОД    РУНГЕ – КУТТА  РЕШЕНИЯ  ЗАДАЧИ    КОШИ   ДЛЯ ОБЫКНОВЕННОГО  ДИФФЕРЕНЦИАЛЬНОГО  УРАВНЕНИЯ</b></h3>
+
+
+<p>Требуется  найти  приближенное решение  уравнения</p>
+
+ <p align="center"><b><i> y&#180  =  f ( x , y ), &#8195   x &#8712 [ <i>x</i><small><sub>0</sub></small></i>,  X ],   &#8195 &#8195   <b>(11.1)</b></i></b></p>             
+
+<p>при заданном  начальном  условии</p>
+
+ <p align="center"><b><i>  y ( <i>x</i><small><sub>0</sub></small></i> )  =  <i>y</i><small><sub>0</sub></small></i>.  &#8195 &#8195   <b>(11.2)</b></i></b></p>                                          
+
+<p>Метод  Рунге – Кутта  решения  задачи  ( 1 ), ( 2 )  относится  к 
+одношаговым  методам   и  дает возможность  вычислить приближенное  решение поставленной  задачи {<i>y</i><small><sub>i</sub></small></i> }   на   сетке   {<i>x</i><small><sub>i</sub></small></i> }   ( i = 1,2,..,n )       по   формуле :</p>
+
+<p align="center"><b><i>  <i>y</i><small><sub>i+1</sub></small></i>   = <i>y</i><small><sub>i</sub></small></i>  + &#916<i>y</i><small><sub>i</sub></small></i>, &#8195 i = 0,1,..,n-1,           &#8195 &#8195   <b>(11.3)</b></i></b></p>              
+
+<p>здесь     &#916<i>y</i><small><sub>i</sub></small></i>   -    приращение,  вид  которого  для  явных  методов  Рунге  -Кутта  различного порядка  точности  вычисляется  следующим  образом:</p>
+
+
+<p>1.Метод  первого  порядка  точности:</p>
+<p align="center"><b><i> &#916<i>y</i><small><sub>i</sub></small></i>  =  h * f ( <i>x</i><small><sub>i</sub></small></i> ,<i>y</i><small><sub>i</sub></small></i>  ); &#8195 h = <i>x</i><small><sub>i+1</sub></small></i>  - <i>x</i><small><sub>i</sub></small></i>.</i></b></p>
+
+  <p> 2. Метод   второго  порядка  точности:</p>
+
+ <p align="center"><b><i>  &#916<i>y</i><small><sub>i</sub></small></i> =  h * f ( <i>x</i><small><sub>i</sub></small></i>  + h/2,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i>/2 );</i></b></p>
+
+ <p align="center"><b><i>  <i>k</i><small><sub>1</sub></small></i>    =   h * f (  <i>x</i><small><sub>i</sub></small></i> , <i>y</i><small><sub>i</sub></small></i> );</i></b></p>    
+
+<p>3.   Метод  второго  порядка  точности:</p>
+
+ <p align="center"><b><i>  &#916<i>y</i><small><sub>i</sub></small></i>  = (<i>k</i><small><sub>1</sub></small></i> + <i>k</i><small><sub>2</sub></small></i> ) / 2;</i></b></p>
+
+<p align="center"><b><i><i>k</i><small><sub>1</sub></small></i> = h * f (  <i>x</i><small><sub>i</sub></small></i> , <i>y</i><small><sub>i</sub></small></i>  ); &#8195 <i>k</i><small><sub>2</sub></small></i> =   h * f ( <i>x</i><small><sub>i</sub></small></i> + h,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i> );</i></b></p>
+
+<p>4.Метод  третьего  порядка  точности:</p>
+  <p align="center"><b><i>  &#916<i>y</i><small><sub>i</sub></small></i> = ( <i>k</i><small><sub>1</sub></small></i> +  3<i>k</i><small><sub>3</sub></small></i> ) /  4;</i></b></p>
+
+ <p align="center"><b><i> <i>k</i><small><sub>1</sub></small></i> = h * f (<i>x</i><small><sub>i</sub></small></i> ,<i>y</i><small><sub>i</sub></small></i>); &#8195    <i>k</i><small><sub>2</sub></small></i>   =  h  * f ( <i>x</i><small><sub>i</sub></small></i>  + h/3,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i>/3 );</i></b></p>
+
+<p align="center"><b><i>  <i>k</i><small><sub>3</sub></small></i>    =  h  * f (  <i>x</i><small><sub>i</sub></small></i>  + 2h/3,  <i>y</i><small><sub>i</sub></small></i>  +  2<i>k</i><small><sub>2</sub></small></i>/3 );</b></i></p>
+
+<p>5.Метод  третьего  порядка  точности:</p>
+ <p align="center"><b><i>  &#916<i>y</i><small><sub>i</sub></small></i> = ( <i>k</i><small><sub>1</sub></small></i> + 4<i>k</i><small><sub>2</sub></small></i> + <i>k</i><small><sub>3</sub></small></i>) /  6;</i></b></p>
+
+ <p align="center"><b><i> <i>k</i><small><sub>1</sub></small></i>  =    h * f (  <i>x</i><small><sub>i</sub></small></i> , <i>y</i><small><sub>i</sub></small></i> );  &#8195 <i>k</i><small><sub>2</sub></small></i> =  h  * f (  <i>x</i><small><sub>i</sub></small></i>  +  h/2,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i>/2 );
+
+ <p align="center"><i> <i>k</i><small><sub>3</sub></small></i> =  h  * f ( <i>x</i><small><sub>i</sub></small></i>  +    h,  <i>н</i><small><sub>i</sub></small></i>+ <i>k</i><small><sub>1</sub></small></i> + 2<i>k</i><small><sub>2</sub></small></i>);</i></b></p>
+
+  <p>     6.Метод  четвертого  порядка  точности:</p>
+
+<p align="center"><b><i>  &#916<i>y</i><small><sub>i</sub></small></i>   =    ( <i>k</i><small><sub>1</sub></small></i> +  4<i>k</i><small><sub>3</sub></small></i> +<i>k</i><small><sub>4</sub></small></i> ) /  6;</i></b></p>
+
+<p align="center"><b><i><i>k</i><small><sub>1</sub></small></i> =    h * f (  <i>x</i><small><sub>i</sub></small></i> , <i>y</i><small><sub>i</sub></small></i> ); &#8195 <i>k</i><small><sub>2</sub></small></i> =  h  * f ( <i>x</i><small><sub>i</sub></small></i>  + h/4,<i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i>/4 );</b></i></p>
+
+<p align="center"><b><i><i>k</i><small><sub>3</sub></small></i>   =  h * f ( <i>x</i><small><sub>i</sub></small></i>  + h/2,  <i>y</i><small><sub>i</sub></small></i>  + <i>k</i><small><sub>2</sub></small></i>/2); &#8195 <i>k</i><small><sub>4</sub></small></i>  =  h  * f ( <i>x</i><small><sub>i</sub></small></i>  + h, <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i> - 2<i>k</i><small><sub>2</sub></small></i>  + 2<i>k</i><small><sub>3</sub></small></i>);</b></i></p>
+
+<p>7.   Метод  четвертого  порядка  точности:</p>
+
+ <p align="center"><b><i>  &#916<i>y</i><small><sub>i</sub></small></i>     =    ( <i>k</i><small><sub>1</sub></small></i>  +  2<i>k</i><small><sub>2</sub></small></i>   +  2<i>k</i><small><sub>3</sub></small></i>  +  <i>k</i><small><sub>4</sub></small></i>) /  6;</b></i></p>
+
+<p align="center"><b><i><i>k</i><small><sub>1</sub></small></i>  = h * f ( <i>x</i><small><sub>i</sub></small></i> , <i>y</i><small><sub>i</sub></small></i> );  &#8195<i>k</i><small><sub>2</sub></small></i> = h  * f ( <i>x</i><small><sub>i</sub></small></i>  + h/2,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i>/2 );</b></i></p>
+
+<p align="center"><b><i><i>k</i><small><sub>3</sub></small></i> =  h  * f (<i>x</i><small><sub>i</sub></small></i>  + h/2,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>2</sub></small></i>/2);&#8195 <i>k</i><small><sub>4</sub></small></i> =  h  * f ( <i>x</i><small><sub>i</sub></small></i>  + h, <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>3</sub></small></i>);</b></i></p>
+
+<p>8.   Метод  четвертого  порядка  точности:</p>
+
+ <p align="center"><b><i>  &#916<i>y</i><small><sub>i</sub></small></i>   =     (  <i>k</i><small><sub>1</sub></small></i>  +  3<i>k</i><small><sub>2</sub></small></i>  +  3<i>k</i><small><sub>3</sub></small></i>  +  <i>k</i><small><sub>4</sub></small></i>) /  8;</b></i></p>
+
+<p align="center"><b><i><i>k</i><small><sub>1</sub></small></i> = h * f ( <i>x</i><small><sub>i</sub></small></i> , <i>y</i><small><sub>i</sub></small></i>);   &#8195<i>k</i><small><sub>2</sub></small></i>   =  h  * f (<i>x</i><small><sub>i</sub></small></i>  + h/3,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i>/3 );</b></i></p>
+
+<p align="center"><b><i><i>k</i><small><sub>3</sub></small></i>  =  h  * f ( <i>x</i><small><sub>i</sub></small></i>  + 2h/3,  <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i>/3  + <i>k</i><small><sub>2</sub></small></i>);</b></i></p>
+
+<p align="center"><b><i><i>k</i><small><sub>4</sub></small></i>  =  h  * f ( <i>x</i><small><sub>i</sub></small></i>  + h, <i>y</i><small><sub>i</sub></small></i> + <i>k</i><small><sub>1</sub></small></i> - <i>k</i><small><sub>2</sub></small></i>  + <i>k</i><small><sub>3</sub></small></i>);</b></i></p>
+
+<p>&nbsp;</p>
+<p><b>Замечание 1.</b>Отладку  программы, реализующей  метод  Рунге – Кутта,
+рекомендуется   проводить,  взяв  в  качестве теста  задачу,  решение  которой  можно  получить  в  аналитическом  виде,  например:</p>
+
+<p>1. y&#180 =  - x &#183 y ,  &#8195   x &#8712 [ 0,  2 ],  </p>                
+<p>y (0 )  =  1.</p>
+
+<p>2. y&#180  =   x - y,   &#8195   x &#8712 [ 0,  2 ],  </p>                 
+<p>y (0 )  =  1.</p>
+             
+<p>Вычисления  можно  проводить  на равномерной  сетке</p>      
+<p><i>x</i><small><sub>i</sub></small></i>    =   i h,&#8195
+i = 0,1,..,n,  &#8195   h  =  (  X  - <i>x</i><small><sub>0</sub></small></i> ) / n.</p>
+
+<p>&nbsp;</p>
+
+<p><span lang="ru">Открыть пример выполнения</span> 
+<a href="example/11.1.1.xls">задания <b>1</b></a>,<a href="example/11.1.2.xls">задания <b>2</b></a>
+с помощью <i>Microsoft Excel</i>.</p>
+<p>&nbsp;</p>
+
+<p><b>Замечание 2.</b> При  реализации  метода  Рунге – Кутта  с  заданной  точностью &#949 используется  формула  Рунге  приближенной  оценки  погрешности </p>
+  
+<p align="center"><i> <b>  r  =  (<i>y</i><small><sup>1</sup></small><small><sub>i+1</sub></small></i> - <i>y</i><small><sup>2</sup></small><small><sub>i+1</sub></small></i>   )  /  ( <i>2</i><small><sup>p</sup></small></i> - 1 ),</b> &#8195 &#8195   <b>(11.4)</b></i></p>                  
+
+<p> здесь  <i>y</i><small><sup>1</sup></small><small><sub>i+1</sub></small></i> - решение,  вычисленное  в  точке <i>x</i><small><sub>i+1</sub></small></i> при  движении
+из  точки <i>x</i><small><sub>i</sub></small></i> с  шагом  h, <i>y</i><small><sup>2</sup></small><small><sub>i+1</sub></small></i> -   решение,  вычисленное  в  точке  <i>x</i><small><sub>i+1</sub></small></i> при  движении  из  точки <i>x</i><small><sub>i</sub></small></i>  с  шагом  h/2, p - порядок  точности используемой  формулы.</p>
+
+<p> Если  выполняется  условие </p> 
+
+<p align="center"><b><i> | r | < &#949 ,  &#8195 &#8195   <b>(11.5)</b></i></b></p>                                   
+
+<p>то  решение  в  точке <i>x</i><small><sub>i+1</sub></small></i> можно  считать  вычисленным  с  заданной  точностью  и,  полагая <i>y</i><small><sub>i+1</sub></small></i> =  <i>y</i><small><sup>2</sup></small><small><sub>i+1</sub></small></i> , переходить  к  вычислению  решения  в  следующей  точке   с  шагом   h    ;     если ,  более  того,  | r | < &#949 /2  ,   то   шаг   можно   удвоить   h  =  2h   .   При   невыполнении  условия    ( 5 )  полагается    h  =  h/2,     и  повторяются   предыдущие   вычисления    ( 4 ) . </p>   
+
+
+<p>&nbsp;</p>
+<p><b>Варианты   заданий:</b></p>
+ 
+ <p> f ( x , y )  =    ( a    +   b ( x ) )  &#183 <i>e</i><small><sup>c(x)</sup></small></i>  +   2 ( 2 - x ) &#183 y ,</p>
+
+<p>где a     =     1)   0,  &#8195    2)  1;  </p>
+
+<p> b ( x )   =  1)   1, &#8195  2)    x, &#8195   3)   sin x,  &#8195  4)   cos x,  &#8195  5)    sin x/2, &#8195   6)   sin 2x;</p>
+
+
+<p>  c( x ) =  1)  - <i>x</i><small><sup>2</sup></small></i>  ,  &#8195   2) - x  ( 1 – x ) ,&#8195    3) -   x ( 1 + x ) ,  &#8195   4)   -  ( 1 + <i>x</i><small><sup>2</sup></small></i> ) ,</p>
+
+ <p>  5)  - <i>x</i><small><sup>3</sup></small></i> , &#8195    6) -  <i>x</i><small><sup>2</sup></small></i> ( 1 - x ) , &#8195  7)  -  <i>x</i><small><sup>2</sup></small></i> ( 1 + x ),  &#8195   8) - 3<i>x</i><small><sup>2</sup></small></i> ( 1 + x ) ;</p>
+
+
+ <p>   <i>x</i><small><sub>0</sub></small></i> =  1,   X  =  6; <i>y</i><small><sub>0</sub></small></i> =  10;      </p>
+  
+<p> n  =  10,  20, 40  (  при  расчетах на  равномерной  сетке).</p>
+
+
+</i><p>&nbsp;   
+
+     </td>
+        <td width="15%"></td>
+
+        </tr>
+
+</table>
+
+
+
+
+<body>
+</body>
+</html>

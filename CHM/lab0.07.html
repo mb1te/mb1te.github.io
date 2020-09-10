@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 1</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor=>
+<table width="100%" border="0">
+  <tr>
+   <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%"></td>
+   <td>
+       <h3 align="center">&nbsp;</h3>
+        <h3 align="center"><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 7</b>
+		<br>МЕТОД ГАУССА РЕШЕНИЯ СИСТЕМЫ ЛИНЕЙНЫХ <br>АЛГЕБРАИЧЕСКИХ УРАВНЕНИЙ</h3>
+ 
+<p>&nbsp;</p>
+ 
+<p>Требуется найти решение линейной системы</p>
+ 
+ <p align="center"><b><i>A x = b</i>, (1)</b></p>
+ 
+<p>здесь <b><i>A</i></b> - матрица размером <b>n * n</b> и рангом, равным <b>n</b>.</p>
+ 
+<p>Метод Гаусса состоит в том, что элементарными преобразованиями над строками система приводится к эквивалентной, матрица которой - верхняя треугольная (прямой ход метода Гаусса ). Решение такой системы строится в явном виде (обратный ход метода Гаусса).</p>
+ 
+<p>Прямой ход проводится по следующим формулам:</p>
+ 
+<p align="center"><img src="images/image099.gif" align="middle"> <b>(2)</b></p>
+
+<p>Обратный ход метода Гаусса – вычисление решения системы с правой треугольной матрицей, - производится по формулам:</p>
+ 
+<p align="center"><img src="images/image100.gif" align="middle"> <b>(3)</b></p>
+ 
+<p><i>Рекомендации к практической реализации алгоритма.</i></p>
+
+<p>Для уменьшения влияния вычислительной погрешности на результат, которое может быть существенным при больших значениях величин <b><i>&#9474;m<sub><small>ji</small></sub>&#9474;</i>, </b>при реализации прямого хода необходимо применить <i>стратегию выбора главного элемента.</i> Можно ограничиться выбором главного элемента по столбцам: при входе в <i><b>i</b></i> -ю строку среди элементов <b>i</b> -го столбца <i> <b>a<sub><small>ki</small></sub></b> (<b>k</b>= <b>i,..,n</b>)</i> выбирается наибольший по модулю, например, <b><i>a<sub><small>pi</small></sub></b></i>, а затем меняются местами <b><i>i</i></b>-ая и <i> <b>p</b></i>-ая строки, в результате чего он становится диагональным &#8213; <b><i>a<sub>ii</sub>.</i></b></p>
+
+<p>При написании программы целесообразно исходные данные помещать в один массив <b><i>C</i></b>, составленный из <b><i>n</i></b> строк и <b><i>n+1</i></b>-го столбца: в первые <b>n</b> столбцов заносятся элементы матрицы <b><i>A</i></b>, в <b><i>n+1</i></b>-й столбец заносятся элементы столбца <b>b</b>.</p>
+
+
+<p>Для решения <b><i>q</i></b> систем с различными правыми частями и одной матрицей <b><i>A</i></b>:</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b><i>A x</b> = <b>B</b></i><b> (4)</b></p>
+
+<p>&nbsp;</p>
+
+<p>(здесь <b><i>B</i> </b>- матрица размером <b>n*q)</b> необходимо сформировать массив <b>C</b> из <b>n</b> строк и <b>n+</b> <b>q</b> столбцов; в последние <b>q</b> столбцов массива помещаются столбцы свободных членов всех систем. В этом случае прямой ход ( 2 ) можно провести один раз над всеми системами одновременно:</p>
+
+<p align="center"><img src="images/image101.gif" align="middle"> <b>(5)</b></p>
+
+<p>&nbsp;</p>
+
+<p>Обратный ход (3) в этом случае реализуется следующим образом:</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><img src="images/image102.gif" align="middle"> <b>(6)</b></p>
+
+<p>здесь <b><i>x<sub><small>ij</small></sub></i></b> - элементы массива <b><i>X</i></b> размера <b><i>n*q</i></b>, <b><i>j</i></b> - ми столбцами которого являются векторы – решения систем (4).</p>
+
+<p>Посмотреть пример использования метода <i> <a href="applet/lab0.07/ex1.html"> на Java </a></i>.</p>
+
+<p>&nbsp;</p>
+
+<p>В качестве примера использования этого метода рассмотрим вычисление обратной матрицы.</p>
+
+<p>&nbsp;</p>
+
+<h2 align="center">Вычисление обратной матрицы.</h2>
+
+<p>&nbsp;</p>
+
+<p>Дана квадратная матрица <b><i>A</i></b> размером <b><i>n*n</i></b>.</p>
+
+<p>Требуется вычислить обратную матрицу <b><i>A<sup><small>-1</small></sup></i></b>.</p>
+
+<p><b><i>По определению </i></b></p>
+
+<p align="center"><b><i>A · A<sup><small>-1 </small></sup>= E</i> (7)</b></p>
+
+<p>&nbsp;</p>
+
+<dl>здесь <b><i>E</i></b> - единичная матрица.</dl>
+
+<p>&nbsp;</p>
+
+<p>Приравнивая столбцы в левой и правой частях равенства (7), приходим к <b>n</b> системам относительно неизвестных столбцов обратной матрицы:</p>
+
+<p align="center"><b><i>A · [ A<sup><small>-1</small></sup> ]<sub><small>j</small></sub> = E<sub><small>j</small></sub> , j = 1,..,n; </i>  (8)</b></p>
+
+<p>&nbsp;</p>
+
+<p><b><i>[ A<small><sup>-1</sup></small>]<sub><small>j</small></sub> , E<sub><small>j</small></sub></i> </b>- соответственно <b><i>j</i></b>-е столбцы матриц <b><i>A<sup><small>-1</small></sup></b>, <b>E</b>.</i></p>
+
+<p>&nbsp;</p>
+
+<p><i>Замечание.</i> У всех <i> <b>n</b></i> систем (8) матрица <b><i>A</i></b> одна и та же,</p>
+
+<p>поэтому для их решения можно применить метод Гаусса с учетом вышеприведенных рекомендаций, т.е. воспользоваться формулами (5), (6), учитывая, что в этом случае </p>
+
+<p><b>q = n</b>. После вычисления обратной матрицы следует провести проверку по формуле (7).</p>
+<p>Пример выполнения задания <i> <a href="applet/lab0.07/ex2.html">на Java </a></i>.</p>
+<p>Посмотреть пример выполнения задания <i> <a href="example/lab07.1.xls"> в Microsoft Excel</a></i>.</p>
+
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST7.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>   
+
+     </td>
+        <td width="15%"></td>
+
+        </tr>
+
+</table>
+
+
+
+
+<body>
+</body>
+</html>

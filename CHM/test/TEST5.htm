@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>ТЕСТ</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<table width="100%">
+  <tr>
+    <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="../index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="../lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="../lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="../lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="../lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="../lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="../lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="../lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="../lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="../lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="../lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="../lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="../lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+    </tr>
+  <tr>
+      <td width="15%">&nbsp;</td>
+        <td>
+
+<script type="text/javascript">
+
+function showById(id, visible) {
+document.getElementById(id).style.display =
+visible ? 'block' : 'none'
+}
+function processForm(f) {
+var i, s='', el
+var questions = new Object()
+var answers = new Object()
+for (i=0; i<f.length; i++) {
+el = f.elements[i]
+if (el.type=='radio' && el.name.indexOf('вопрос')==0) {
+questions[el.name] = 0
+if (el.checked)
+answers[el.name] = parseInt(el.value)
+}
+}
+s = '\n'
+var asked = 0, answered = 0, score = 0
+for (i in questions) asked++
+for (i in answers) {
+s += '\n' + i + ' = ' + answers[i]
+answered++
+score += answers[i]
+}
+alert(
+'Вы ответили на '+ answered + ' из ' + asked + ' вопросов'
++ '\n--------------Ответы:-----------------'
++ s
++ '\n ---------------------------------------'
++ '\nРезультат = ' + score
+)
+if (answered < asked) {
+alert('Вы ответили на '+answered+' вопросов из '+asked+'. Для получения достоверного результата нужно ответить на все воросы')
+}
+else {
+showById('questionsForm', false)
+el = document.getElementById('score')
+el.innerHTML = (score>0) ? +score : score
+showById('results', true)
+if (score > 0)
+showById('explain-positive', true)
+else if (score == 0)
+showById('explain-zero', true)
+}
+}
+function resetTest() { 
+showById('questionsForm', true) 
+showById('results', false) 
+document.forms['opros'].reset() 
+}
+</script>
+
+<h2 align=middle><font size="6"  face="Arial">Тест </font></h2>
+<p><b>Выберете правильный ответ на каждый вопрос. Для получения результата нажмите кнопку "Результат". </b> </p>
+<p><b>Появится окно, где Вы увидите свои результаты: 0 - Вы ответили не правильно, 1 - Вы ответили правильно.</b> </p>
+<p><b>Оценка тестирования формируется по следующей шкале: 0-4 - неудовлетворительно, 5-6 - удовлетворительно, 7-8 - хорошо, 9-10 - отлично.</b></p>
+<div id="questionsForm">
+<form name="opros">
+<p/>
+<font size="4" color = "#1C1C1C" face="Arial">
+<br/><strong>1.</strong> В каких случаях имеет смысл строить приближение не по заранее заданным данным, которые отображаются точками, а в среднем по норме? <br/><br/>
+<p><input type="radio" name="вопрос1" value="1" id="q1a1"/><label for="q1a1"> Когда данные заданы с небольшой точностью</label><p/><br/>
+<p><input type="radio" name="вопрос1" value="0" id="q1a2"/><label for="q1a2"> Когда данные нельзя отобразить точками</label><p/><br/>
+<p><input type="radio" name="вопрос1" value="0" id="q1a3"/><label for="q1a3"> Это никогда не имеет смысла</label><p/><br/>
+<p><input type="radio" name="вопрос1" value="0" id="q1a4"/><label for="q1a4"> Это имеет смысл только в экономических задачах</label></p>
+<br/><br/>
+<hr/>
+<p/>
+<br/><strong>2.</strong> Пусть аппроксимация осуществляется функцией <img align=absmiddle src="t5.2.1.gif">, где <img align=absmiddle src="t5.2.2.gif"> 
+- линейно независимые функции.  Параметрами являются коэффициенты <img align=absmiddle src="t5.2.3.gif">. Тогда в каком пространстве можно минимизировать 
+такой функционал, найдя решение системы: <img align=absmiddle src="t5.2.4.gif">?<br/><br/>
+<p><input type="radio" name="вопрос2" value="1" id="q2a1"/><label for="q2a1"> <img align=absmiddle src="t5.2.5.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос2" value="0" id="q2a2"/><label for="q2a2"> <img align=absmiddle src="t5.2.6.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос2" value="0" id="q2a3"/><label for="q2a3"> В любом гильбертовом</label><p/><br/>
+<p><input type="radio" name="вопрос2" value="0" id="q2a4"/><label for="q2a4"> В любом банаховом</label><p/><br/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>3.</strong> Что является критерием единственности решения системы <img align=absmiddle src="t5.2.4.gif">, 
+где <img align=absmiddle src="t5.2.2.gif"> - линейно независимые функции?<br/><br/>
+<p><input type="radio" name="вопрос3" value="0" id="q3a1"/> Определитель Грамма (определитель, составленный из скалярных произведений) не равен нулю<label for="q3a1"> </label><p/><br/>
+<p><input type="radio" name="вопрос3" value="0" id="q3a2"/> Система функций <img align=absmiddle src="t5.2.2.gif"> ортогональна<label for="q3a2"> </label><p/><br/>
+<p><input type="radio" name="вопрос3" value="0" id="q3a3"/> Функция <i>y(x)</i> ортогональна всем <img align=absmiddle src="t5.2.2.gif"><label for="q3a3"> </label><p/><br/>
+<p><input type="radio" name="вопрос3" value="1" id="q3a4"/> Определитель Грамма (определитель, составленный из скалярных произведений) не равен нулю<label for="q3a4"> </label><p/><br/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>4.</strong> Наилучшее приближение в <img align=absmiddle src="t5.2.5.gif"> называется <br/><br/>
+<p><input type="radio" name="вопрос4" value="0" id="q4a1"/><label for="q4a1"> Равномерным приближением</label><p/><br/>
+<p><input type="radio" name="вопрос4" value="1" id="q4a2"/><label for="q4a2"> Среднеквадратичным приближением</label><p/><br/>
+<p><input type="radio" name="вопрос4" value="0" id="q4a3"/><label for="q4a3"> Линейным приближением</label><p/><br/>
+<p><input type="radio" name="вопрос4" value="0" id="q4a4"/><label for="q4a4"> Среднеарифметическим приближением</label><p/><br/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>5.</strong> Если кроме линейной независимости <img align=absmiddle src="t5.2.2.gif">, выполняется также условие ортонормированности, 
+тогда <img align=absmiddle src="t5.2.4.gif"> упрощается и имеет следующий вид:<br/><br/>
+<p><input type="radio" name="вопрос5" value="0" id="q5a1"/><label for="q5a1"> <img align=absmiddle src="t5.5.1.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос5" value="1" id="q5a2"/><label for="q5a2"> <img align=absmiddle src="t5.5.2.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос5" value="0" id="q5a3"/><label for="q5a3"> <img align=absmiddle src="t5.5.3.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос5" value="0" id="q5a4"/><label for="q5a4"> <img align=absmiddle src="t5.5.4.gif"></label><p/><br/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>6.</strong> Какие системы функций рекомендуется использовать в качестве <img align=absmiddle src="t5.2.2.gif"> с точки зрения теории?<br/><br/>
+<p><input type="radio" name="вопрос6" value="0" id="q4a1"/><label for="q6a1"> <img align=absmiddle src="t5.6.1.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос6" value="1" id="q4a2"/><label for="q6a2"> Ортогональные многочлены</label><p/><br/>
+<p><input type="radio" name="вопрос6" value="0" id="q4a3"/><label for="q6a3"> <img align=absmiddle src="t5.6.2.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос6" value="0" id="q4a4"/><label for="q6a4"> Любую линейно независимую систему функций</label><p/><br/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>7.</strong> Рассмотрим таблично-заданную вещественную функцию, заданную N точками <img align=absmiddle src="t5.7.1.gif">, <img align=absmiddle src="t5.7.2.gif">. 
+Для пространства таких функций вводится понятие скалярного произведения и нормы по аналогии с <img align=absmiddle src="t5.2.5.gif"> в виде:<br/><br/>
+<p><input type="radio" name="вопрос7" value="0" id="q4a1"/><label for="q7a1"> <img align=absmiddle src="t5.7.3.gif"></label><p/>
+<p><input type="radio" name="вопрос7" value="0" id="q4a2"/><label for="q7a2"> <img align=absmiddle src="t5.7.4.gif"></label><p/>
+<p><input type="radio" name="вопрос7" value="0" id="q4a3"/><label for="q7a3"> <img align=absmiddle src="t5.7.5.gif"></label><p/>
+<p><input type="radio" name="вопрос7" value="1" id="q4a4"/><label for="q7a4"> <img align=absmiddle src="t5.7.6.gif"></label><p/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>8.</strong> Рассмотрим таблично-заданную вещественную функцию, заданную N точками <img align=absmiddle src="t5.7.1.gif">, <img align=absmiddle src="t5.7.2.gif">. 
+Если в качестве <img align=absmiddle src="t5.2.2.gif"> - аппроксимирующей функции взять линейную комбинацию: <img align=absmiddle src="t5.2.1.gif">, 
+то нахождение величин <img align=absmiddle src="t5.2.3.gif"> сводится к минимизации функционала: <br/><br/>
+<p><input type="radio" name="вопрос8" value="0" id="q4a1"/><label for="q8a1"> <img align=absmiddle src="t5.8.1.gif"></label><p/>
+<p><input type="radio" name="вопрос8" value="0" id="q4a2"/><label for="q8a2"> <img align=absmiddle src="t5.8.2.gif"></label><p/>
+<p><input type="radio" name="вопрос8" value="1" id="q4a3"/><label for="q8a3"> <img align=absmiddle src="t5.8.3.gif"></label><p/>
+<p><input type="radio" name="вопрос8" value="0" id="q4a4"/><label for="q8a4"> <img align=absmiddle src="t5.8.4.gif"></label><p/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>9.</strong> Для чего используется метод наименьших квадратов?<br/><br/>
+<p><input type="radio" name="вопрос9" value="0" id="q4a1"/><label for="q9a1"> Используется  для построения такого многочлена, который интерполирует данный набор точек</label><p/><br/>
+<p><input type="radio" name="вопрос9" value="1" id="q4a2"/><label for="q9a2"> Используется  для построения такого многочлена, который аппроксимирует данный набор точек точнее всех многочленов своей степени</label><p/><br/>
+<p><input type="radio" name="вопрос9" value="0" id="q4a3"/><label for="q9a3"> Используется для минимизации расстояний от аппроксимирующей функции 
+<img align=absmiddle src="t5.2.2.gif"> до точек <img align=absmiddle src="t5.7.1.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос9" value="0" id="q4a4"/><label for="q9a4"> Используется для решения системы <img align=absmiddle src="t5.9.1.gif"></label><p/><br/>
+<br/>
+<hr/>
+<p/>
+<br/><strong>10.</strong> Выбрать линейную функцию, которая наилучшим образом по методу наименьших квадратов приближает точки: (0;0),  (2;1), (4;0).<br/><br/>
+<p><input type="radio" name="вопрос10" value="0" id="q4a1"/><label for="q10a1"> <img align=absmiddle src="t5.10.1.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос10" value="1" id="q4a2"/><label for="q10a2"> <img align=absmiddle src="t5.10.2.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос10" value="0" id="q4a3"/><label for="q10a3"> <img align=absmiddle src="t5.10.3.gif"></label><p/><br/>
+<p><input type="radio" name="вопрос10" value="0" id="q4a4"/><label for="q10a4"> <img align=absmiddle src="t5.10.4.gif"></label><p/><br/>
+<br/>
+<hr/>
+<p/>
+<br/>
+<input type="button" value="Результат" onClick="processForm(this.form)"/>
+<input type="reset" value="Очистить"></input>
+</form>
+</div>
+<div id="results" style="display: none;">
+<h3>Ваш результат: <span id="score" style="font-size: 160%"></span></h3>
+<br/><br/>
+
+<div id="explain-positive" style="display: none;">
+<!-- Здесь расшифровка для положительного результата -->
+</div>
+
+<p>Спасибо за участие в тестировании</p>
+<br/>
+<input type="button" value="Начать заново" onClick="resetTest()"/>
+</div>
+
+<p align="center"><a href="../lab0.05.html"><i>Вернуться</i><a/></p>
+<hr/>
+</body>
+		
+		
+        </td>
+        <td width="15%"></td>
+       
+        </tr>
+</table>
+<body>
+</body>
+</html>

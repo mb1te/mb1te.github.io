@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 3</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<table width="100%" border="0">
+  <tr>
+    <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+  <td width="15%">&nbsp;</td>
+<td>
+        <p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>МНОГОИНТЕРВАЛЬНАЯ ИНТЕРПОЛЯЦИЯ.</b></p>
+
+<P>Многоинтервальная интерполяция заключается в интерполяции <i>f</i>(<i>x</i>) в ряде интервалов, ограниченных 2-мя узлами или группами узлов, отдельными полиномами невысокой степени. Такая интерполяция может применяться при достаточно большом общем отрезке [<i>a</i>,<i>b</i>], когда обычная интерполяция полиномом высокой степени даёт большую погрешность и ведёт к большому времени вычислений. Заметим также, что по виду полинома и значениям его коэффициентов трудно судить о виде функциональной зависимости <i>f</i>(<i>x</i>).</P>
+
+<P>Многоинтервальная интерполяция характеризуется следующими чертами:</P>
+
+<P>-степень интерполирующего полинома не зависит от числа узлов;</P>
+
+<P>-для любого интервала вычисление <i>f</i>(<i>x</i>) производится по одним и тем же относительно простым (из-за малой степени полинома) формулам, поэтому время вычислений <i>f</i>(<i>x</i>) при заданных <i>x</i> мало.</P>
+
+
+
+<p>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 3</b></p>
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>ИНТЕРПОЛЯЦИОННЫЙ МНОГОЧЛЕН ЭРМИТА</b></p>
+
+
+<P>Интерполирование по Эрмиту есть специальный вид многоинтервальной интерполяции, при котором интерполирующий многочлен <i>H<small><sub>n</sub></small></i>(<i>х</i>) обеспечивает не только равенство <i>H<sub><i>n</i></sub></small></i>(<i>х</i>) значениям <i>f</i>(<i>x</i>), но и совпадение некоторого количества  производных в узлах интерполяции.</P>
+
+<P>Рассмотрим следующую задачу: пусть задана последовательность узлов <i>x<small><sub>k</sub></small></i> на [<i>a</i>,<i>b</i>], причём <i>a</i>=<i>x</i><small><sub>0</sub></small>, <i>x</i><<i>x</i><small><sub><i>i</i>+1</sub></small>, <i>b</i>=<i>x<small><sub>n</sub></small></i>. Поставим в соответствие каждому <i>x<small><sub>k</sub></small></i> некоторое натуральное <i>N<small><sub>j</sub></small></i> &nbsp; (<i>N<small><sub>j</sub></small></i>&isin;<i>N</i>). Пусть известны не только значения функции <i>f</i> в точках <i>x<small><sub>k</sub></small></i>: <i>f</i>(<i>x<small><sub>k</sub></small></i>), но и значения всех ( <i>N</i><small><sub><i>j</i></sub></small>-1) производных. Тоесть для любого <i>x<small><sub>k</sub></small></i> известно: <i>f</i>(<i>x<small><sub>k</sub></small></i>), <i>f&nbsp;'</i>(<i>x<small><sub>k</sub></small></i>), ..., <i>f</i><small><sup>(<i>N</i><small><i><sub>k</sub></i></small>-1)</sup></small>(<i>x<small><sub>k</sub></small></i>).</P>
+
+<P>Ставится задача построения такого многочлена, который бы удовлетворял всей этой совокупности условий для любого <i>k</i> (<i>k</i>=0,<i>n</i>).</P>
+
+<P>Очевидно, что степень такого многочлена должна быть равной</p>
+
+<p align="center"><img src="images/image301.gif"></p>
+
+<p>Величина <i>N<small><sub>j</sub></small></i> называется кратностью <i>k</i>-го узла.</P>
+
+<P>Многочлен, строящийся по таким обобщенным условиям интерполирования, называется <i><u>интерполяционным многочленом Эрмита</u></i>.</P>
+
+<P><i>Рассмотрим пример интерполяционного многочлена</i>: Пусть <i>k</i>&isin;[0,1] и даны значения <i>f</i>(0), <i>f</i>(1), <i>f</i>'(0), <i>f</i>'(1). Построим многочлен 
+</p><p align="center"><i>H</i><small><sub>3</sub></small>(<i>x</i>)=<i>p</i><small><sub>00</sub></small>(<i>k</i>)<i>f</i>(0)+<i>p</i><small><sub>01</sub></small>(<i>k</i>)<i>f'</i>(0)+<i>p</i><small><sub>10</sub></small>(<i>k</i>)<i>f</i>(1)+<i>p</i><small><sub>11</sub></small>(<i>k</i>)<i>f'</i>(1). &nbsp; &nbsp; &nbsp; &nbsp; <b>(1)</b></P>
+
+<P>Степень интерполяционного многочлена Эрмита в этом случае будет равна 2*2&minus;1=3.</P>
+
+<p>Все функции <i>p<sub><small>ij</small></sub></i>(<i>k</i>) являются многочленами третьей степени. Общий вид такого многочлена
+<img src="images/image302.gif" align="middle">.</p>
+
+<p>Покажем как определяются его коэффициенты на примере функции <i>p</i><small><sub>00</sub></small>(<i>k</i>). Для нее должны выполняться, согласно формуле (1), следующие условия:</p>
+
+<p><i>p</i><small><sub>00</sub></small>(0)=1</p>
+<p><i>p</i><small><sub>00</sub></small>(1)=0</p>
+<p><i>p'</i><small><sub>00</sub></small>(0)=<i>p'</i><small><sub>00</sub></small>(1)=0</p>
+
+<p>Значит для этой функции коэффициенты <i>a<sub><small>j</small></sub></i> удовлетворяют следующей системе:</p>
+
+<p><img src="images/image303.gif"></p>
+
+<p>Решением этой системы является <i>a</i><small><sub>0</sub></small>=1, <i>a</i><small><sub>1</sub></small>=0, <i>a</i><small><sub>2</sub></small>=-3, <i>a</i><small><sub>3</sub></small>=2.(Проверьте самостоятельно). Запишите  такие же системы для других функций формулы (1) и найдите значения их коэффициентов. После этого можно записать <i>H</i><small><sub>3</sub></small>(<i>x</i>) в следующем виде:</p>
+
+<P align="center"><i>H</i><small><sub>3</sub></small>(<i>x</i>)=(1&minus;3<i>k</i><small><sup>2</sup></small>+2<i>k</i><small><sup>3</sup></small>)<i>f</i>(0)+(3<i>k</i><small><sup>2</sup></small>&minus;2<i>k</i><small><sup>3</sup></small>)<i>f</i>(1)+(<i>k</i>&minus;2<i>k</i><small><sup>2</sup></small>+<i>k</i><small><sup>3</sup></small>)<i>f&nbsp;'</i>(0)+(&minus;<i>k</i><small><sup>2</sup></small>+<i>k</i><small><sup>3</sup></small>)<i>f&nbsp;'</i>(1) &nbsp; &nbsp; &nbsp; &nbsp; <b>(2)</b></P> 
+
+<P>Задание1: Объясните, какой системе условий должен удовлетворять каждый из четырёх многочленов 3-ей степени при данных <i>f</i>(0),<i>f</i>(1),<i>f</i>&nbsp;&prime;(0),<i>f</i>&nbsp;&prime;(1). Как можно непосредственно из этой системы условий найти коэффициенты этих многочленов?</P>
+
+<P>Если <i>x</i>&isin;[<i>a</i>,<i>b</i>], тогда <i>k</i>=(<i>x</i>&minus;<i>a</i>)/(<i>b</i>&minus;<i>a</i>)=(<i>x</i>&minus;<i>a</i>)/<i>h</i>.</P> 
+
+<P>Тогда для произвольного <i>x</i>:</P>
+
+<P align="center"><i>H</i><small><sub>3</sub></small>(<i>x</i>)=(1&minus;3<i>k</i><small><sup>2</sup></small>+2<i>k</i><small><sup>3</sup></small>)<i>f</i>(<i>a</i>)+(3<i>k</i><small><sup>2</sup></small>&minus;2<i>k</i><small><sup>3</sup></small>)<i>f</i>(<i>b</i>)+<i>h</i>(<i>k</i>&minus;2<i>k</i><small><sup>2</sup></small>+<i>k</i><small><sup>3</sup></small>)<i>f&nbsp;'</i>(<i>a</i>)+<i>h</i>(&minus;<i>k</i><small><sup>2</sup></small>+<i>k</i><small><sup>3</sup></small>)<i>f&nbsp;'</i>(<i>b</i>) &nbsp; &nbsp; &nbsp; &nbsp; <b>(3)</b></P>
+
+<P>&nbsp;</P> 
+
+<P><u>Задание 2</u>: 1). Выбрать на плоскости 2 произвольные точки в качестве узлов и показать, как влияют значения производных в этих точках на поведение многочлена.</P>
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.03/ex2.1.html">задания на Java </a></i>.</p>
+
+<P>2). Кусочно интерполировать функцию</P> 
+
+<P><i>f</i>(<i>x</i>)=1/(1+<i>dx</i><small><sup>2</sup></small>), &nbsp; &nbsp; &nbsp; x&isin;[-1,1]; &nbsp; &nbsp; &nbsp; <i>d</i>=5+<i>k</i>, &nbsp; &nbsp; &nbsp; <i>k</i>=1,2,..,20</P>
+
+<dl>с использованием формулы (3) на каждом участке равномерного разбиения с шагом 0,1.
+
+    <p>Открыть <a href="example/3.0.xls">пример</a> выполнения этого задания с помощью <i>Microsoft Excel</i>.</p>
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.03/ex2.2.html">задания на Java </a></i>.</p>
+</dl>
+
+
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST3.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+</body>
+
+<p>&nbsp;</p>
+
+        
+
+        </td>
+        <td width="15%">&nbsp;</td>
+        </tr>
+</table>
+
+
+
+
+<body>
+</body>
+</html>

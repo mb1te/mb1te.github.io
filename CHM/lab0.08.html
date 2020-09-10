@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 8</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor=>
+<table width="100%" border="0">
+  <tr>
+   <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%"></td>
+   <td>
+        <h3 align="center">&nbsp;</h3>
+<h3 align="center"><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 8 <br>ИТЕРАЦИОННЫЕ МЕТОДЫ РЕШЕНИЯ СИСТЕМ ЛИНЕЙНЫХ АЛГЕБРАИЧЕСКИХ УРАВНЕНИЙ</b></h3>
+
+<h3 align="center">Метод простой итерации.</h3>
+
+<p>Требуется найти решение линейной системы </p>
+
+<p align="center"><i><b>A x = b</b>.</i> (1.1)</p>
+
+<p>Строится эквивалентная система</p>
+
+<p align="center"><b><i>x = C x + d ,</i> </b>(1.2)</p>
+
+<p>&nbsp;</p>
+
+<p>решением которой является вектор – предел последовательности векторов <b><i>x<sup><small>(k)</small></sup></i>:</b></p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b><i>x<sup><small>(k+1)</small></sup> = Cx<sup><small>(k)</small></sup> + d, k=0,1,2… </i></b>(1.3)<b> </b></p>
+
+<p>&nbsp;</p>
+
+<dl>здесь <b><i>C</i> </b>- матрица размером <b>n * n, </b>такая, что выполняются условия сходимости итерационного процесса ( 1.3 ): <b><i>&#9553; С &#9553;&lt; 1</i></b> или <b><i>&#9474; &#955;<sub><small>с</small></sub>&#9474;&lt; 1</i></b>, <b>&#955;<sub><small>с</small></sub></b> - собственные значения матрицы <b><i>C</i></b>.</dl>
+
+<p>&nbsp;</p>
+
+<p><i>Замечание 1.</i> В случае выполнения условия диагонального преобладания <img src="images/image103.gif" align="absmiddle"> (1.4) элементов матрицы <b><i>A</i></b> элементы матриц <b><i>C</i></span> </b>и<b> <i>d</span></i></b> можно вычислить по формулам:</p>
+
+<p>&nbsp;</p>
+<p align="center"><img src="images/image104.gif" align="absmiddle"> (1.5)</p>
+
+<p>&nbsp;</p>
+
+<p>В этом случае выполняется достаточное условие сходимости итерационного процесса (1.3) <b><i>&#9553; С &#9553;&lt; 1</i>.</b></p>
+
+<p>&nbsp;</p>
+
+<p><i>Замечание.</i> Практическая реализация итерационного процесса (1.2) производится до выполнения условий</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b>&nbsp;<i>&#9553; x<sup><small>(k+1)</small></sup> &#9472; x<sup><small>(k)</small></sup> &#9553; &lt; &#949; </i>, </b>(1.6)</p>
+
+<p>&nbsp;</p>
+
+<p>где <b>&#949; </b>- заданная точность, начальное приближение <b>x<sup><small>(0)</small></sup> </b>задается произвольно; в качестве приближенного решения системы ( 1.1 ) берется вектор<b> x<sup><small>(k+1)</small></sup>.</b></p>
+
+<p>&nbsp;</p>
+
+<p><b>Задание: найти решение линейной системы ( 1.1 ) в случае диагонального преобладания элементов матрицы <i>A</i>. Определить зависимость количества итераций от заданной точности &#949;. Сравнить решение с решением методом Гаусса (см. лабораторную работу 
+7).</b></p>
+
+<p>&nbsp;</p>
+<p>
+
+<p>Пример выполнения задания <i> <a href="applet/lab0.08/ex1.html">на Java</a></i>.</p>
+<p>Посмотреть пример выполнения <i> <a href="example/lab08.1.xls">задания в Microsoft Excel</a></i>.</p>
+<p>&nbsp;</p>
+
+<h3 align="center">Итерационные методы вариационного типа.</h3>
+
+<p>&nbsp;Рассмотрим явную нестационарную итерационную схему для: <b><i>A&gt;0, A</i></b>=<b><i>A</i></b><sup><small>Т</small></sup></p>
+
+<p align="center"><img src="images/image105.gif" align="absmiddle"> (1.5)</p>
+
+<p>Определим оптимальные параметры этого метода из условия минимума <img src="images/image106.gif" align="absmiddle"> при постоянном <img src="images/image107.gif" align="absmiddle">. Напомним, что <img src="images/image108.gif" align="absmiddle"> - погрешность <i>к</i>-ой итерации.</p>
+
+<p>Сходимость изложенных далее методов не будет лучше сходимости итерационных методов с чебышевским набором параметров. Однако, их реализация не требует решения задачи определения границ спектра.</p>
+
+<p><b>&nbsp;1) метод минимальных невязок </b></p>
+
+<p>&nbsp;<i><u>Определение:</u></i> невязкой итерационного метода называется величина <img src="images/image109.gif" align="absmiddle"> (2.2)</p>
+
+<p>&nbsp;Перепишем (2.1) с использованием невязок </p>
+
+<p> <img src="images/image110.gif" align="absmiddle"></p>
+
+<p> <img src="images/image111.gif" align="absmiddle"></p>
+
+<p>Тогда <img src="images/image112.gif" align="absmiddle">, <img src="images/image113.gif" align="absmiddle"></p>
+
+<p> <img src="images/image114.gif" align="absmiddle"></p>
+
+<p> <img src="images/image115.gif" align="absmiddle"> (2.3)</p>
+
+<p>Тогда из (2.3) находим квадрат нормы <i>(k</span>+1)-</i>ой невязки <img src="images/image116.gif" align="absmiddle"></p>
+
+<p>На правую часть этого равенства можно смотреть, как на многочлен второй степени от <i>&tau;<sub><small><small>k+1</small></small></sub></i>. Т.к. коэффициент при <i>&tau;<small><small><sup>2</sup><sub>k+1</sub></small></small></i> положителен, то такой многочлен имеет единственный локальный минимум: </p>
+
+<p align="center"> <img src="images/image117.gif" align="absmiddle"> (2.4)</p>
+
+<p>Следовательно, для метода минимальных невязок решена поставленная задача минимизации нормы <img src="images/image106.gif" align="absmiddle">&nbsp;по той причине, что 
+<i>z<small><small><sup>(k)</sup></small></small></i> удовлетворяет такому же самому уравнению (3), что ио <i>r<small><small><sup>(k)</sup></small></small></i> . 
+Оптимальное значение последовательности <i>&tau;<small><small><sub>k</sub></small></small></i>&nbsp;находится в этом методе по формуле (2.4).</p>
+
+<p>&nbsp;</p>
+
+<p><i>Алгоритм вычисления по методу минимальных невязок:</i></p>
+
+<p>1) Пусть известно некое <i>x<small><small><sup>(k)</sup></small></small></i>&nbsp;(<i>x<small><small><sup>(0)</sup></small></small></i>задается произвольно)</p>
+
+<p>2) Считаем невязки <i>r<small><small><sup>(k)</sup></small></small></i>&nbsp;(смотри определение (2.2))</p>
+
+<p>3) по формуле (2.4) находим <i>&tau;<small><small><sub>k+1</sub></small></small></i></p>
+
+<p>4) по формуле (2.3) определяем <i>r<small><small><sup>(k+1)</sup></small></small></i></p>
+
+<p>5) процесс продолжается до тех пор, пока норма невязки не станет меньше заданного <i>&epsilon;</i>.</p>
+
+<p><b>&nbsp;2) метод скорейшего спуска</b></p>
+
+<p>&nbsp;Этот метод также создан для явной схемы, как и первый метод этой лабораторной работы, но отличие в том, что минимизация осуществляется не по среднеквадратичной норме, а по норме, подчинённой матрице <i>А</i>.</p>
+
+<p> <img src="images/image118.gif" align="absmiddle"></p>
+
+<p>Так как <img src="images/image126.gif" align="absmiddle"></p>
+
+<p> <img src="images/image127.gif" align="absmiddle">, то перемножая правые и левые части получим:</p>
+
+<p>&nbsp;</p>
+
+<p> <img src="images/image119.gif" align="absmiddle"></p>
+
+<p>На правую часть этого равенства можно смотреть, как на многочлен второй степени от <i>&tau;<small><small><sub>k+1</sub></small></small></i>. Т.к. коэффициент при <i>&tau;<small><small><sup>2</sup><sub>k+1</sub></small></small></i> положителен, то такой многочлен имеет единственный локальный минимум:</p>
+
+<p> <img src="images/image120.gif" align="absmiddle"></p>
+
+<p>Покажем, что <i>Az<small><sup>(k)</sup></small>=r<small><sup>(k)</sup></small></i></p>
+
+<p> <img src="images/image121.gif" align="absmiddle">, следовательно:</p>
+
+<p> <img src="images/image122.gif" align="absmiddle"> (2.5)</p>
+
+<p><i>Алгоритм вычисления по методу скорейшего спуска:</i></p>
+
+<p>1) Пусть известно некое <i>x<small><small><sup>(k)</sup></small></small></i>&nbsp;(<i>x<small><small><sup>(0)</sup></small></small></i>задается произвольно)</p>
+
+<p>2) Считаем невязки <i>r<small><small><sup>(k)</sup></small></small></i>&nbsp;(смотри определение (2.2))</p>
+
+<p>3) по формуле (2.5) находим <i>&tau;<small><small><sub>k+1</sub></small></small></i></p>
+
+<p>4) по формуле (2.3) определяем <i>r<small><small><sup>(k+1)</sup></small></small></i></p>
+
+<p>5) процесс продолжается до тех пор, пока норма невязки не станет меньше заданного <i>&epsilon;</i>.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;Рассмотрим вопрос о скорости сходимости указанных методик. Можно доказать следующее утверждение: </p>
+
+<p>&nbsp;Скорость сходимости первого метода не выше скорости сходимости метода простой итерации без оптимального выбора <i>&tau;</i>. Последний метод равен по скорости методу простой итерации с чебышёвским выбором параметров.</p>
+
+<p>Существует метод скорейшего спуска и для неявной схемы. В этом случае имеем: <img src="images/image123.gif" align="absmiddle"></p>
+
+<p>Используя ранее введенные обозначения и минимизируя <img src="images/image124.gif" align="absmiddle"> можно получить <img src="images/image125.gif" align="absmiddle">.</p>
+
+<p><b>Задание: найти решение линейной системы ( 1.1 ) в случае симметрической и положительно определённой матрицы <i>A</i>. Определить зависимость количества итераций от заданной точности &#949; в методах 1) и 2) и сравнить результаты для разных методов при одинаковых &#949; .</b></p>
+
+<p>&nbsp;</p>
+<p>
+
+<p>Пример выполнения задания <i> <a href="applet/lab0.08/ex2.html">на Java</a></i>.</p>
+<p>Посмотреть пример выполнения <i> <a href="example/lab08.2.xls">задания в Microsoft Excel</a></i>.</p>
+<p>&nbsp;</p>
+<h3 align="center">Аналогичные расчётные формулы можно получить, используя иной подход.</h3>
+<p>&nbsp;</p>
+<i>
+<p>Распространенным методом минимизации функции большого числа переменных является метод градиентного спуска. Последующее приближение в этом методе получается из предыдущего смещением в направлении градиента функции F(<b>x</b>), т.е. каждое последующее приближение ищется в виде:</p>
+
+		
+<p>&nbsp;</span></p>
+<p align="center"><b>x</b><sup><small>k+1</small></sup><b>&nbsp;= x</b><sup><small>k</small></sup><b> - b<sub><small>k</small></sub>grad</b>F(<b>x</b><sup><small>k</small></sup>) (3.1)</span></p>
+
+<p>&nbsp;</p>
+
+<p>Параметр <b>b<sub><small>k</small></sub></b> можно определить из условия минимума величины </p>
+
+<p>&nbsp;</p>
+
+<p align="center">F(<b>b<sub>k</sub></b>) = F(<b>x</b><sup><small>k</small></sup><b> - b<sub><small>k</small></sub>grad </b>F (<b>x</b><sup><small>k</small></sup>)),</p>
+
+<p>&nbsp;</p>
+
+<dl>рассматриваемой как функции от <b>b<sub><small>k</small></sub></b>. При таком выборе параметра <b>b<sub><small>k</small></sub></b> метод называется методом наискорейшего спуска.</dl>
+
+<p>&nbsp;</p>
+
+<p>Пусть дана система уравнений</p>
+
+<p align="center"><b>Ax = b </b>(3.2)</p>
+
+<p>&nbsp;</p>
+
+<dl>где <b>A = A<sup><small>T</small></sup></b> ( <b>A -</b> симметричная, положительно определенная матрица ), тогда задача решения системы (1.1) эквивалентна отыскания минимума функции</dl>
+
+<p>&nbsp;</p>
+
+<p align="center">F(<b>x</b>) = (<b>Ax, x</b>) - 2(<b>b,x</b>).</p>
+
+<p>&nbsp;</p>
+
+<p>Покажем это: действительно, </p>
+
+<p align="center"><b>grad </b>F(<b>x</b>) = 2(<b>Ax - b</b>); (3.3)</p>
+
+<p>&nbsp;</p>
+
+<dl>необходимое условие экстремума функции F(<b>x</b>) (в данном случае оно одновременно является и достаточным) имеет вид:</dl>
+
+<p>&nbsp;</p>
+
+<p align="center"><b>grad </b>F(<b>x</b>) = <b>0</b></p>
+
+<dl>или, согласно (3.3): </dl>
+
+<p align="center"><b>Ax - b = 0</b></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Реализация решения СЛАУ в этом случае состоит в следующем:</p>
+
+<p>1. Задается начальное приближение - вектор <b>x<small><sup>0</sup></small></b>.</p>
+
+<p>2. Вычисляется следующее приближение <b>x</b><sup><small>k+1 </small></sup>по формуле </p>
+
+<p><b>&nbsp;</b></p>
+
+<p align="center"><b>x<sup><small>k+1</small></sup>= x<sup><small>k</small></sup> - b<sub><small>k</small></sub>r<sup><small>k </small></sup>,</b></p>
+
+<p>&nbsp;</p>
+<p>где вектор <b>r<sup><small>k</small></sup> - </b>невязка, <b>r<sup><small>k</small></sup> = Ax<sup><small>k</small></sup> - b,</b></p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b>b<sub><small>k</small></sub> = </b>(<b>r<sup><small>k </small></sup>,r<sup><small>k</small></sup></b>) &#8725; (<b>Ar<sup><small>k</small></sup>,r<sup><small>k</small> </sup></b>).</p>
+
+<p>&nbsp;</p>
+
+<p>3. Для контроля точности полученного приближения вычисляется величина </p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b>E</b> =&#9553; <b>x<sup><small>k+1</small></sup>&nbsp;- x<sup><small>k</small></sup> </b>&#9553; =&#9474;<b>b<sub><small>k</small></sub></b> &#9474;&#9553; <b>r<sup><small>k</small></sup></b> &#9553;.</p>
+
+<p>&nbsp;</p>
+
+<p>Если<b> E &lt; &#949; , </b>		где<b> &#949;</b> - заданная точность, то итерационный процесс 		прекращается.</p>
+
+<p>Определяется приближенное решение системы <b>x<sup><small>k</small></sup></b> и номер итерации <b>k</b> .
+
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST8.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+
+        </td>
+        <td width="15%"></td>
+
+        </tr>
+
+</table>
+
+
+
+
+<body>
+</body>
+</html>

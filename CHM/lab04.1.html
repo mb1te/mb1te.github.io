@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 4</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<table width="100%" border="0">
+  <tr>
+     <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%">&nbsp;</td>
+  
+	<td>
+
+<p>&nbsp;</p>
+
+<P><i><u>Метод прогонки.</u> Пусть дана система уравнений:</i></P>
+
+<p align="center"><img src="images/image312.gif"></p>
+
+<dl><i>Будем искать решение (1) в виде:</i></dl>
+
+<dl>
+  <div align="center"><i>y<small><sub>j</sub></small>=<i>p</i><small><sub>j+1</sub></small>y<small><sub>j+1</sub></small>+<i>q</i><small><sub>j+1</sub></small>, &nbsp; &nbsp; j=0,...,N-1 &nbsp; &nbsp; &nbsp; </i><b>(3)</b></div>
+</dl>
+
+<dl><i>Тогда:</i></dl>
+
+<dl>
+  <div align="center"><i>y<small><sub>j&minus;1</sub></small>=p<small><sub>j</sub></small>y<small><sub>j</sub></small>+q<small><sub>j</sub></small>=p<small><sub>j</sub></small>(p<small><sub>j+1</sub></small>y<small><sub>j+1</sub></small>+q<small><sub>j+1</sub></small>)+q<small><sub>j</sub></small>=p<small><sub>j</sub></small>p<small><sub>j+1</sub></small>y<small><sub>j+1</sub></small>+(p<small><sub>j</sub></small>q<small><sub>j+1</sub></small>+q<small><sub>j</sub></small>)</i></div>
+</dl>
+
+<dl><i>Подставляем в (1) и приводим подобные:</i></dl>
+
+<dl>
+  <div align="center"><i>a<small><sub>j</sub></small>(p<small><sub>j</sub></small>p<small><sub>j+1</sub></small>y<small><sub>j+1</sub></small>+(p<small><sub>j</sub></small>q<small><sub>j+1</sub></small>+q<small><sub>j</sub></small>))-c<small><sub>j</sub></small>(p<small><sub>j+1</sub></small>y<small><sub>j+1</sub></small>+q<small><sub>j+1</sub></small>)+b<small><sub>j</sub></small>y<small><sub>j+1</sub></small>+f<small><sub>j</sub></small>=0</i></div>
+</dl>
+
+<dl>
+  <div align="center"><i>y<small><sub>j+1</sub></small>(a<small><sub>j</sub></small>p<small><sub>j</sub></small>p<small><sub>j+1</sub></small>-c<small><sub>j</sub></small>p<small><sub>j+1</sub></small>+b<small><sub>j</sub></small>)+(a<small><sub>j</sub></small>(p<small><sub>j</sub></small>q<small><sub>j+1</sub></small>+q<small><sub>j</sub></small>)-c<small><sub>j</sub></small>q<small><sub>j+1</sub></small>+f<small><sub>j</sub></small>)=0</i></div>
+</dl>
+
+<p><i>Последнее выражение выполняется для любого y<small><sub>j+1</sub></small>, только если коэффициенты в скобках равны нулю. Тогда p<small><sub>j+1</sub></small> и q<small><sub>j+1</sub></small> необходимо выбрать такими:</i></p>
+
+<p><table align="center">
+  <tr>
+<td><div align="center"><img src="images/image314.gif">
+</div></td><td> &nbsp; &nbsp; <i>j</i>=1,2,...,<i>N</i>-1. &nbsp; &nbsp; <b>(4)</b></td>
+</tr></table></p>
+
+<dl><i>Теперь необходимо задать начальные значения p<small><sub>1</sub></small> и q<small><sub>1</sub></small> для того, чтобы все остальные p<small><sub>j</sub></small> и q<small><sub>j</sub></small> (от 2 до N) можно было найти.</i></dl>
+
+<P><i>Эти начальные значения находим из того, что при j=0 условие  y<small><sub>0</sub></small>=p<small><sub>1</sub></small>y<small><sub>1</sub></small>+q<small><sub>1</sub></small> должно соответствовать первому из уравнений (2). Тогда p<small><sub>1</sub></small>=k<small><sub>1</sub></small> и q<small><sub>1</sub></small>=m<small><sub>1</sub></small>.</i></P>
+
+<P><i>Нахождение p<small><sub>j+1</sub></small>, q<small><sub>j+1</sub></small> по этим формулам (4) называется <u>прямой прогонкой</u>. После того, как все p<small><sub>j+1</sub></small> и q<small><sub>j+1</sub></small> найдены, решения системы (1)(2) находится по формуле (3), начиная с j=N-1. Но тогда, для начала счёта, требуется знать y<small><sub>N</sub></small>. Оно определяется из уравнения </i></P>
+
+<p align="center"><img src="images/image315.gif"></p>
+
+<P><i>Нахождение y<small><sub>i</sub></small> по этим формулам называется <u>обратной прогонкой</u>.</i></P>
+
+  <P>Алгоритм решения, включающий прямую и обратную прогонки, называется <u>методом прогонки решения С.Л.А.У. с трех диагональной матрицей</u>.</i></P>                         
+
+<p align="center"><a href="lab0.04.html"><i>Перейти к лабораторной работе</i></p>
+</td>
+          <td width="15%">&nbsp;</td>
+        </tr>
+</table>
+
+
+
+
+<body>
+</body>
+</html>

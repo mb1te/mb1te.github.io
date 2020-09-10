@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 6</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<table width="100%" border="0">
+  <tr>
+   <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                   <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%">&nbsp;</td>
+   <td>
+    <p>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>ЧИСЛЕННОЕ ИНТЕГРИРОВАНИЕ<o:p></o:p></b></p>
+
+<p>Рассмотрим интеграл вида</p>
+
+<p><table align="center">
+  <tr>
+<td><img width=157 height=55 src="images/image501.gif" v:shapes="_x0000_i1501"></td><td> &nbsp; &nbsp; <b>(1)</b>
+</td></tr></table></p>
+
+<dl>где [<i>a</i>,<i>b</i>] – конечный промежуток числовой оси, <i>f</i>(<i>x</i>) – произвольная  функция из некоторого класса <i>F</i>, непрерывная на [<i>a</i>,<i>b</i>], <i>&rho;</i>(<i>x</i>) - заданная весовая функция, <i>&rho;</i>(<i>x</i>)&ge;0,</dl>
+
+<p align="center"><img width=104 height=55 src="images/image502.gif" v:shapes="_x0000_i1502">.</p>
+
+<p>Для приближенного вычисления интеграла <i>I</i>(<i>f</i>) строятся линейные квадратурные формулы (<i>квадратуры</i>) следующего вида:</p>
+
+<p><table align="center">
+  <tr>
+<td><img width=144 height=52 src="images/image503.gif" v:shapes="_x0000_i1503"></td><td>. &nbsp; &nbsp; <b>(2)</b>
+</td></tr></table></p>
+
+<dl>Постоянные <i>a<small><sub>i</sub></small></i> называются коэффициентами (<i>весами</i>) квадратуры, а <i>x<small><sub>i</sub></small></i> - <i>ее узлами</i>.</dl>
+
+<p>Для каждой функции <i>f</i>(<i>x</i>)&isin;<i>F</i> погрешность квадратурной формулы <i>S<small><sub>n</sub></small></i>(<i>f</i>) определяется как <i>R<small><sub>n</sub></small></i>(<i>f</i>)=<i>I</i>(<i>f</i>)-<i>S<small><sub>n</sub></small></i>(<i>f</i>). При этом оценкой погрешности на классе <i>F</i> называют величину</p>
+
+<p><table align="center">
+  <tr>
+<td><img width=151 height=41 src="images/image504.gif" v:shapes="_x0000_i1504"></td><td>. &nbsp; &nbsp; <b>(3)</b>
+</td></tr></table></p>
+
+<p>&nbsp;</p>
+
+
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 6.1<o:p></o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>Составные  квадратурные формулы.<o:p></o:p></b></p>
+
+<p>Приведем несколько составных квадратурных формул, построенных на равномерной сетке.</p>
+
+<p><u>1.Формула центральных прямоугольников:</u></p>
+
+<p align="center"><img width=187 height=52 src="images/image505.gif" v:shapes="_x0000_i1505"></p>
+
+<dl>для погрешности в этом случае имеет место оценка:</dl>
+
+<p align="center"><img width=172 height=47 src="images/image506.gif" v:shapes="_x0000_i1506"></p>
+
+<dl>здесь</dl>
+
+<p align="center"><img width=375 height=41 src="images/image507.gif" v:shapes="_x0000_i1507" /></p>
+
+<p><u>2.Формула трапеций:</u></p>
+
+<p align="center"><img width=319 height=52 src="images/image500.gif" v:shapes="_x0000_i1508" /></p>
+
+<dl>для погрешности в этом случае имеет место оценка:</dl>
+
+<p align="center"><img width=172 height=48 src="images/image509.gif" v:shapes="_x0000_i1509" /></p>
+
+<dl>здесь</dl>
+
+<p align="center"><img width=375 height=41 src="images/image507.gif" v:shapes="_x0000_i1510"></p>
+
+<p><u>3.Формула Симпсона:</u></p>
+
+<p align="center"><img width=355 height=45 src="images/image510.gif" v:shapes="_x0000_i1511"></p>
+
+<dl>для погрешности в этом случае имеет место оценка:</dl>
+
+<p align="center"><img width=172 height=48 src="images/image511.gif" v:shapes="_x0000_i1512"></p>
+
+<dl>здесь</dl>
+
+<p align="center"><img width=388 height=41 src="images/image512.gif" v:shapes="_x0000_i1513"></p>
+<p><b><a href="example/lab06.0.xls">Пример</a>.</b></i></p>
+
+<p>&nbsp;</p>
+<p>При вычислении интеграла (1) с заданной точностью <i>&epsilon;</i> используется формула Рунге приближенной оценки погрешности: вычисления проводятся на сгущающейся сетке до выполнения условия
+<p><table align="center"><tr>
+<td><img width=159 height=51 src="images/image513.gif" v:shapes="_x0000_i1514"></td><td>, &nbsp; &nbsp; <b>(4)</b>
+</td></tr></table></p>
+
+<dl>где <i>S</i><small><sub>2<i>n</i></sub></small>(<i>f</i>), <i>S<small><sub>n</sub></small></i>(<i>f</i>) - приближенные значения интеграла, вычисленные на сетках с шагом <i>h/2</i> и <i>h</i> соответственно, <i>p</i> – порядок погрешности используемой квадратурной формулы.</dl>
+<p>Посмотреть пример <i> <a href="applet/lab0.06/ex1.html">на Java </a></i>.</p>
+<p><i><b><u>Задание:</u></b></i></p>   
+
+<p>1) Составить программу вычисления интеграла (1) с заданной точностью.</p> 
+
+<p>Варианты заданий:</p>
+
+
+<p align="center"><img width=480 height=122 src="images/image514.gif" v:shapes="_x0000_i1515"></p>
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.06/ex2.html">задания на Java </a></i>.</p>
+<p><i>Замечание. Отладку программы проводить на функциях, для которых используемая квадратурная формула является точной.</i></p>
+<p><b>Посмотреть пример выполнения <i> <a href="example/lab06.1.xls">задания в Microsoft Excel</a></b></i>.</p>
+<p>2) Вычислить функцию, используя  составленную программу.</p>
+
+<p>Варианты заданий:</p> 
+
+
+<p align="center">
+<div align="center">
+  <table>
+    <tr>
+      <td>1. Интегральный синус</td>
+    <td><img width=232 height=55 src="images/image515.gif" v:shapes="_x0000_i1521"></td>
+    </tr>
+    
+    <tr>
+      <td>2. Функция Френеля</td>
+    <td><img width=268 height=55 src="images/image516.gif" v:shapes="_x0000_i1522"></td>
+    </tr>
+    
+    <tr>
+      <td>3. Функция Лапласа</td>
+    <td><img width=268 height=61 src="images/image517.gif" v:shapes="_x0000_i1523"></td>
+    </tr>
+    
+    <tr>
+      <td>4.Функция Лобачевского</td>
+    <td><img width=267 height=55 src="images/image518.gif" v:shapes="_x0000_i1524"></td>
+    </tr>
+    
+    <tr>
+      <td>5.Эллиптический интеграл 1-го рода</td>
+    <td><img width=296 height=87 src="images/image519.gif" v:shapes="_x0000_i1525"></td>
+    </tr>
+    
+    <tr>
+      <td>6. Эллиптический интеграл 2-го рода</td>
+    <td><img width=313 height=87 src="images/image520.gif" v:shapes="_x0000_i1526"></td>
+    </tr>
+  </table>
+  </p>
+  
+  
+  
+</div>
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.06/ex3.html">задания на Java </a></i>.</p>
+<p>&nbsp;</p>
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 6.2.<o:p></o:p></b></p>
+
+<p>Интегрирование квадратурными формулами Ньютона-Котеса.</p>
+
+<p>Пусть некоторая функция <i>f</i>(<i>х</i>), как и раньше, задана в виде таблицы значений <i>y<small><sub>i</sub></small></i>=<i>f</i>(<i>х<small><sub>i</sub></small></i>) в узлах интерпо­ляции <i>х<small><sub>i</sub></small></i>=<i>х</i><small><sub>0</sub></small>+<i>ih</i> на отрезке [<i>а</i>,<i>b</i>]. Требуется найти значения интеграла</p>
+
+<p align="center"><img width=95 height=51 src="images/image521.gif" v:shapes="_x0000_i1527"></p>
+
+<dl>на указанном отрезке.</dl>
+
+<p>По заданным значениям подынтегральной функции <i>y<small><sub>i</sub></small></i>=<i>f</i>(<i>х<small><sub>i</sub></small></i>) построим интерполяционный полином Лагранжа</p>
+
+<p align="center"><img width=166 height=48 src="images/image522.gif" v:shapes="_x0000_i1528"></p>
+
+<dl>который для равноотстоящих узлов примет вид</dl>
+
+<p align="center"><img width=277 height=56 src="images/image523.gif" v:shapes="_x0000_i1529"></p>
+
+<dl>где <i>q</i>=(<i>х</i>-<i>х<small><sub>0</sub></small></i>)/<i>h</i>.</dl>
+
+<p>Теперь заменим подынтегральную функцию <i>f</i>(<i>х</i>) построенным полиномом, считая, что узлы интер­поляции расположены равномерно:</p>
+
+<p align="center"><img width=304 height=104 src="images/image524.gif" v:shapes="_x0000_i1530"></p>
+
+<p>Проведя необходимые элементарные преобразования, выполнив замену переменных <i>dq</i>=<i>dx/n</i> и сме­­нив в соответствии с подстановкой пределы интегрирования, получим</p>
+
+<p align="center"><img width=391 height=101 src="images/image525.gif" v:shapes="_x0000_i1531"></p>
+
+<p>Здесь <i>h</i>- шаг, который для равноотстоящих узлов интерполяции определяется как <i>h</i>=(<i>b</i>-<i>а</i>)/<i>n</i>. Под­ставив значения <i>h</i> в последнюю формулу, окончательно получим</p>
+
+<p align="center"><img width=235 height=50 src="images/image526.gif" v:shapes="_x0000_i1532"></p>
+
+<dl>где</dl>
+
+<p align="center"><img width=429 height=51 src="images/image527.gif" v:shapes="_x0000_i1533"></p>
+
+<p><i>Н<small><sub>i</sub></small> - коэффициенты Ньютона - Котеса.</i> Они не зависят от значений функции <i>f</i>(<i>х</i>) и являются функциями только количества узлов, на которые разбит отрезок [<i>а</i>,<i>b</i>]. Поэтому <i>Н<small><sub>i</sub></small></i> обычно вычисляют заранее:</p>
+
+<dl><i>n</i> = 1: <i>Н</i><small><sub>0</sub></small> = <i>Н</i><small><sub>1</sub></small> = <sup>1</sup>/<sub>2</sub>;</dl>
+
+<dl><i>n</i> = 2: <i>Н</i><small><sub>0</sub></small> = <i>Н</i><small><sub>2</sub></small> = <sup>1</sup>/<sub>6</sub>; &nbsp; &nbsp; <i>Н</i><small><sub>1</sub></small> = <sup>2</sup>/<sub>3</sub>;</dl>
+
+<dl><i>n</i> = 3: <i>H</i><small><sub>0</sub></small> = <i>H</i><small><sub>3</sub></small> = <sup>1</sup>/<sub>8</sub>; &nbsp; &nbsp; <i>H</i><small><sub>1</sub></small> = <i>H</i><small><sub>2</sub></small> = <sup>3</sup>/<sub>8</sub>;</dl>
+
+<dl><i>n</i> = 5: <i>H</i><small><sub>0</sub></small> = <i>H</i><small><sub>5</sub></small> = <sup>19</sup>/<sub>288</sub>;&nbsp; <i>H</i><small><sub>1</sub></small> = <i>H</i><small><sub>4</sub></small> = <sup>25</sup>/<sub>96</sub>; &nbsp; &nbsp; <i>H</i><small><sub>2</sub></small> = <i>H</i><small><sub>3</sub></small> = <sup>25</sup>/<sub>144</sub>.</dl>
+<dl><i>n</i> = 6: &nbsp; <i>H</i><small><sub>0</sub></small> = <i>H</i><small><sub>6</sub></small> = <sup>41</sup>/<sub>840</sub>; &nbsp; <i>H</i><small><sub>1</sub></small> = <i>H</i><small><sub>5</sub></small> = <sup>9</sup>/<sub>35</sub>;</dl> 
+
+<p><i>H</i><small><sub>2</sub></small> = <i>H</i><small><sub>4</sub></small> = <sup>9</sup>/<sub>280</sub>, &nbsp; <i>Н</i><small><sub>3</sub></small> = <sup>34</sup>/<sub>105</sub>;</p>
+
+<dl><i>n</i> = 7: &nbsp; <i>H</i><small><sub>0</sub></small> = <i>H</i><small><sub>7</sub></small> = <sup>751</sup>/<sub>17280</sub>; <i>H</i><small><sub>1</sub></small> = <i>H</i><small><sub>6</sub></small> = <sup>3577</sup>/<sub>17280</sub>;</dl>
+
+<p><i>H</i><small><sub>2</sub></small> = <i>H</i><small><sub>5</sub></small> = <sup>1323</sup>/<sub>17280</sub>; &nbsp; <i>Н</i><small><sub>3</sub></small> = <i>Н</i><small><sub>4</sub></small> = <sup>2989</sup>/<sub>17280</sub>.</p>
+<p>Если теперь рассмотреть частные случаи фор­мулы Ньютона - Котеса, то:</p>
+
+<p>1) при <i>n</i> = 1 получаем формулу трапеций:</p>
+
+<p align="center"><img width=242 height=51 src="images/image528.gif" v:shapes="_x0000_i1534"></p>
+
+<p>2) при <i>n</i> = 2 получаем формулу Симпсона:</p>
+
+<p align="center"><img width=285 height=50 src="images/image529.gif" v:shapes="_x0000_i1535"></p>
+
+<p>3) при <i>n</i> = 3 получаем формулу "трех восьмых":</p>
+
+<p align="center"><img width=345 height=51 src="images/image530.gif" v:shapes="_x0000_i1536"></p>
+
+
+
+
+
+<p><i><u>Задание:</u></i> Составить программу вычисления определённого интеграла:</p>
+
+<p align="center"><img width=96 height=51 src="images/image531.gif" v:shapes="_x0000_i1537"></p>
+
+<p>Для проверки работы программы вычислять определенный интеграл параллельно с помощью простейших формул интегрирования из первой части этой лабораторной работы. Для вычислений по формулам Ньютона - Котеса <i>n</i> = 3, 4, 5, 6, 7; по остальным формулам значение <i>n</i> варьировать: 10, 20, 50, 100. Результаты оформить в виде таблиц и сравнить.</p>
+<p><b>Посмотреть пример выполнения <i> <a href="example/lab06.2.xls">задания в Microsoft Excel</a></b></i>.</p>
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST6.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+    </td>
+          <td width="15%">&nbsp;</td>
+        </tr>
+</table>
+
+
+
+
+<body>
+</body>
+</html>

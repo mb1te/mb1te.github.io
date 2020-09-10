@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 9</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor=>
+<table width="100%" border="0">
+  <tr>
+   <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                   <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%"></td>
+   <td>
+        <h3 align="center">&nbsp;</h3>
+
+<h3 align="center">ЛАБОРАТОРНАЯ РАБОТА 9 <br>9.1. ВЫЧИСЛЕНИЕ   НАИБОЛЬШЕГО  И НАИМЕНЬШЕГО СОБСТВЕННЫХ ЗНАЧЕНИЙ  МАТРИЦЫ</h3>
+
+
+<p>Требуется вычислить границы спектра матрицы <b><i>A</i>. </b>Пусть матрица <b><i>A</i></b> имеет полную систему собственных векторов <b>e<sub><small><small>i</small></small></sub>, <i>i=1,..,n:</i></b></p>
+
+<p align="center"><b><i>A e<sub><small><small>i</small></small></sub> = &#955;<sub><small><small>i</small></small></sub> e<sub><small><small>i</small></small></sub>,</i></b> (1)</p>
+
+<dl>причем</dl>
+
+<p align="center"><b>&nbsp;<i>&#9474; </i><i>&#955;<sub><small>1</small></sub> &#9474; &gt; &#9474; &#955;<sub><small>2</small></sub> &#9474; &#8805; &#9474; &#955;<sub><small>3</small></sub> &#9474; &#8805; … &gt; &#9474; &#955; <sub><small>n</small></sub> &#9474;</i>.</b></p>
+
+<p>&nbsp;</p>
+
+<p>Решение поставленной задачи можно получить, <i>используя итерационный метод вычисления наибольшего по модулю собственного значения матрицы.</i></p>
+
+<p>&nbsp;</p>
+
+<p>Для вычисления наибольшего по модулю собственного значения матрицы <b>&#955;max</b>=<b><i>&#9474;&#955;<sub><small>1</small></sub>&#9474;</i></b> в случае, когда собственные значения матрицы - вещественные числа, применяется следующий итерационный процесс: строится последовательность чисел</p>
+
+<p>&nbsp;</p>
+
+<p align="center"> <img src="images/image128.gif" align="middle"><b>&nbsp;(2)</b></p>
+
+<p>&nbsp;</p>
+
+<dl>здесь вектор <b><i>x<sup><small>(k+1)</small></sup></i></b> вычисляется следующим образом:</dl>
+
+<p>&nbsp;</p>
+
+<p align="center">&nbsp;<b><i>x<sup><small>(k+1)</small></sup> = A x<sup><small>(k)</small></sup>,</i> </b>(3)</p>
+
+<dl><b><i>x<sup><small>(0)</small></sup></i></b> - произвольный начальный вектор.</dl>
+
+<p>&nbsp;</p>
+
+<p>Процесс построения последовательности (2) продолжается до выполнения условия</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b><i>&nbsp;&#9474; &#955;<sup><small>(k)</small></sup>&#8213; &#955;<sup><small>(k-1)</small></sup>&#9474; &lt; &#949;, </i>(4)</b></p>
+
+<p>&nbsp;</p>
+
+<dl>где <b>&#949;</b> - заданная точность. При этом значение <b>&#955;<sup><small>k</small></sup></b> и является приближенным значением искомого <b><i>&#955;max</i></b>, а соответствующий вектор <b><i>x<sup><small>(k)</small></sup></i></b>– приближенным собственным вектором, соответствующим <b><i>&#955;max</i></b>.</dl>
+
+<p>&nbsp;</p>
+
+<p>Для вычисления границ спектра матрицы <b><i>A</i></b> вышеизложенный метод нужно применить к матрице <b><i>A+cE</i></b>, собственные значения которой связаны со спектром матрицы <b><i>A</i></b> соотношением</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b><i>&#955;<sub><small>i</small></sub>(A+cE)</i></b><i>=<b>&#955;</b></i><b><i><sub><small>i</small></sub>(A) + c. </i></b>(5)</p>
+
+<p>&nbsp;</p>
+
+<p>Очевидно, что при достаточно больших положительных значениях <b>c</b> наибольшему по модулю <b><i>&#955;<sub><small>i</small></sub>(A+cE)</i></b> соответствует наибольшее <b><i>&#955;<sub><small>i</small></sub>(A)</i></b>, а при достаточно больших отрицательных <b>c</b> наибольшему по модулю <b><i>&#955;<sub><small>i</small></sub>(A+cE)</i></b> соответствует наименьшее <b><i>&#955;<sub>i</span></sub>(A)</i></b>.</p>
+
+<p>&nbsp;</p>
+
+<p><i>Замечание1. </i>При численной реализации алгоритма для предупреждения переполнения или обнуления элементов векторов <b><i>x<sup><small>(k)</small></sup></i></b> необходимо их нормировать, т.е. вместо соотношения ( 3 ) использовать:</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><b><i>y<sup><small>(k +1)</small></sup> = A y<sup><small>(k)</small></sup>,</i></b></p>
+
+<p>&nbsp;</p>
+
+<dl>где <b><i>y<sup><small>(k)</small></sup> = x<sup><small>(k) </small></sup>/ &#9553; x<sup><small>(k) </small></sup>&#9553;</i></b>. (Используйте среднеквадратичную норму.)</dl>
+
+<p>&nbsp;</p>
+
+<p><i>Замечание2. </i>В качестве константы <b><i>c</i></b> можно, например, использовать <b>&#9553;A&#9553;</b>, так как известно, что<b> <i>&#9474;&#955;<sub><small>i</small></sub>&#9474;</i></b> не больше<b> &#9553;A&#9553;</b>.</p>
+
+<p>&nbsp;</p>
+
+<p><b>Задание: Построить итерационный процесс, определяющий наибольшее и наименьшее собственное значение матрицы, у которой существует наибольшее по модулю собственное значение кратности 1 с заданной точностью. Найти нормированные собственные векторы этих собственных чисел. Протестировать на примере матрицы второго порядка с известными собственными значениями.</b></p>
+<p>&nbsp;</p>
+<p>Посмотреть пример выполнения задания<i> <a href="example/lab9.xls"></b> в Microsoft Excel</a></i>.</p>
+<p>&nbsp;</p>
+
+<h3 align="center">9.2. МЕТОД ВРАЩЕНИЙ ОПРЕДЕЛЁННЫХ СОБСТВЕННЫХ ЗНАЧЕНИЙ СИММЕТРИЧНОЙ МАТРИЦЫ</h3>
+
+
+<p>1. Матрицы <b><i>А</i></b> и <b><i>B</i></b> называются подобными, если существует такая неособая матрица <i><b>F</i></b>, что <b><i>A=F*B*F<sup><small>-1</small></sup></i></b>. Собственные числа <b><i>А</i></b> и <b><i>B</i></b> – совпадают.</p>
+<p>2. Матрица <b><i>U</i></b> называется ортогональной, если <b><i>U*U<sup><small>T</small></sup> = E</i></b>, или <b><i>U<sup><small>T</small></sup> = U<sup><small>-1</small></sup></i></b>.</p>
+<p>3. Всякая симметричная матрица <b><i>А</i></b>, (<b><i>А=A<sup><small>T</small></sup></i></b>) может быть записана в виде <b><i>А = U<sup><small>T</small>*L*U</sup></i></b>, где <b><i>U</i></b> – ортогональная матрица, а <br> <b><i>L – diag{ λ<sub><small>i</small></sub>(A)}</i></b>.</p>
+<p>&nbsp;</p>
+<p>Но тогда из этих определений следует, что для любой симметричной <b><i>А</i></b> верно:</p>
+<p>&nbsp;</p>
+<p align="center"><b><i>U*A*U<sup><small>T</small></sup> = U*U<sup><small>T</small></sup>*L*U<sup><small>T</small></sup>*U = U*U<sup><small>-1</small></sup>L*U<sup><small>-1</small></sup>*U = L</i></b>.</p> 
+<p>&nbsp;</p>
+<p>Значит, по определению <b><i>A</i></b> и <b><i>L</i></b> – подобные.</p>
+<p>Обозначим собственные числа матрицы А – <b><i>λ<sub><small>i</small></sub>(A)</i></b>.
+Тогда проблема определения <b><i>λ<sub><small>i</small></sub>(A)</i></b> сводится к определению ортогональной матрицы <b><i>U</i></b>.</p>
+<p>Построим такие матрицы <b><i>W<sub><small>n</small></sub></i></b>, чтобы для них выполнялось при  <b><i>n -> ∞ : W<sub><small>n</small></sub>*A*W<sub><small>n</small></sub><sup><small>T</small></sup> -> L</i></b>.</p>
+<p>Такие <b><i>W<sub><small>n</small></sub></i></b> будем искать в виде следующего произведения:</p>
+<p>&nbsp;</p>
+<p align="center"><b><i>W<sub><small>n</small></sub> = V<sub><small>n</small></sub>*V<sub><small>n-1</small></sub>*…*V<sub><small>1</small></sub></i></b>,
+<p>&nbsp;</p>
+ где все <b><i>V<sub><small>i</small></sub></i></b> – ортогональные матрицы.</p>
+<p>Рассмотрим следующую матрицу <img align=absmiddle src="images/im.9.0.gif">, у которой:</p>
+<p>&nbsp;</p>
+<p align="center"><img align=absmiddle src="images/im.9.1.gif">; <img align=absmiddle src="images/im.9.2.gif">, <img align=absmiddle src="images/im.9.3.gif">
+, при <img align=absmiddle src="images/im.9.4.gif">, все остальные <img align=absmiddle src="images/im.9.5.gif">.</p>
+<p>&nbsp;</p>
+<p>Такая матрица при  n = 4, <i>k</i> = 2, <i>l</i> = 3 имеет следующий вид:</p>
+<p>&nbsp;</p>
+<p align="center"><img align=absmiddle src="images/im.9.6.gif"></p>
+<p>&nbsp;</p>
+<p>Можно показать, что эта матрица является ортогональной. Известно также, что она осуществляет вращение вокруг оси  <b><i>X</i></b> на угол 
+<img align=absmiddle src="images/im.9.7.gif">. Поэтому она называется матрицей вращения.</p>
+<p>&nbsp;</p>
+<p>Имеет место следующее утверждение: </p>
+<p>Пусть <b><i>B</i></b> – некая симметричная матрица размерности <b>[m×m]</b>, <b><i>B=B<sup><small>T</small></sup></i></b>  и рассмотрим <img align=absmiddle src="images/im.9.8.gif">.</p>
+<p>Существует следующее утверждение для этой матрицы:</p>
+<p>Если <i>k</i> и <i>l</i> – это индексы <img align=absmiddle src="images/im.9.9.gif">, а <img align=absmiddle src="images/im.9.10.gif">, то тогда для элементов матрицы <img align=absmiddle src="images/im.9.11.gif">
+ верно следующее равенство: </p>
+<p align="center"><img align=absmiddle src="images/im.9.12.gif"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>(*)</b></p>
+<p>&nbsp;</p>
+<p>Именно такие матрицы можно использовать при формировании матрицы <b><i>W<sub><small>n</small></sub></i></b>.</p>
+<p>Действительно, построим последовательность матриц <b><i>A<sup><small>(n)</small></sup></i></b> по следующему закону:</p>
+<p>&nbsp;</p>
+<p align="center"><b><i>A<sup><small>(1)</small></sup> = V<sub><small>1</small></sub>*A*V<sup><small>T</small></sup><sub><small>1</small></sub>;</i></b></p>
+<p align="center"><b><i>A<sup><small>(2)</small></sup> = V<sub><small>2</small></sub>*A<sup><small>(1)</small></sup>*V<sup><small>T</small></sup><sub><small>2</small></sub>;</i></b></p>
+<p align="center"><b><i>……………………;</i></b></p>
+<p align="center"><b><i>A<sup><small>(n)</small></sup> = V<sub><small>n</small></sub>*A<sup><small>(n-1)</small></sup>*V<sup><small>T</small></sup><sub><small>n</small></sub>.</i></b></p>
+<p>Причём, для каждого <img align=absmiddle src="images/im.9.13.gif">. V<sub><small>p</small></sub> выбирается = <img align=absmiddle src="images/im.9.14.gif">,
+ так, чтобы <img align=absmiddle src="images/im.9.15.gif">.</p>
+<p>Но тогда <b><i>A<sup><small>(n)</small></sup> = V<sub><small>n</small></sub>…V<sub><small>1</small></sub>*A*V<sup><small>T</small></sup><sub><small>1</small></sub>
+…V<sup><small>T</small></sup><sub><small>n</small></sub></i></b>, или <b><i>A<sup><small>(n)</small></sup> = W<sub><small>n</small></sub>*A*W<sub><small>n</small></sub>
+<sup><small>T</small></sup></i></b> и при этом <img align=absmiddle src="images/im.9.16.gif"></p>
+<p>По определению, <b><i>A<sup><small>(n)</small></sup></i></b>  и <b><i>A</i></b> -подобные матрицы, следовательно их собственные значения – равны.</p>
+<p>Если теперь рассмотреть матрицу <img align=absmiddle src="images/im.9.17.gif">, то <b><i>A<sup><small>(n)</small></sup></i></b> и 
+<b><i>L<sup><small>(n)</small></sup></i></b> – близки в силу неравенства (*). 
+Следовательно, близки их коэффициенты характеристического многочлена, а тогда и собственные числа.</p>
+<p>Поэтому собственные значения <b><i>L<sup><small>(n)</small></sup></i></b> = диагональным элементам <b><i>A<sup><small>(k)</small></sup></i></b>,
+ и являются решением задачи определения всех <b><i>λ<sub><small>i</small></sub>(A)</i></b> с задаваемой заранее точностью.</p>
+<p><i>Замечание 1.</i> При практической реализации метода строить <b><i>A<sup><small>(p)</small></sup></i></b>, выбирая 
+<img align=absmiddle src="images/im.9.17_0.gif">, на основе сформированного утверждения.</p>
+<p><i>Замечание 2.</i> Если <b><i>А</i></b> – симметричная комплекснозначная матрица, то <b><i>А<sup><small>T</small></sup> -> 
+A<sup><small>*</small></sup></i></b> - сопряжённая матрица.</p>
+<p>&nbsp;</p>
+<p align="center"><b>Алгоритм выполнения Л.Р 9.2.</b></p>
+<p align="center"><b>“Определение собственных чисел симметричной матрицы методом вращений”</b></p>
+<p>&nbsp;</p>
+<p>1)	Пусть дана матрица <b><i>А</i></b> размерностью <b>[n×n]</b>,  <b><i>A=А<sup><small>T</small></sup></i></b>, n=1;</p>
+<p>2)	Определяем <i>k</i> и <i>l</i>, такие, что <img align=absmiddle src="images/im.9.18.gif">;</p>
+<p>3)	Находим <img align=absmiddle src="images/im.9.19.gif">;</p>
+<p>4)	Строим матрицу <img align=absmiddle src="images/im.9.20.gif"> – матрица вращения с элементами</p>
+<p><img align=absmiddle src="images/im.9.1.gif">; <img align=absmiddle src="images/im.9.2.gif">, <img align=absmiddle src="images/im.9.3.gif">
+, при <img align=absmiddle src="images/im.9.4.gif">, все остальные <img align=absmiddle src="images/im.9.5.gif">.</p>
+<p>&nbsp;</p>
+<p>5)	Находим <b><i>A<sup><small>(n)</small></sup> = W<sub><small>n</small></sub>*A*W<sub><small>n</small></sub>
+<sup><small>T</small></sup></i></b></p>
+<p>6)	Проверяем <img align=absmiddle src="images/im.9.21.gif">: если оно верно, то конец алгоритма, иначе – <b>n=n+1</b> и возврат к пункту 2.</p>
+<p>&nbsp;</p>
+<p><b>Задание:  Используя выше указанный алгоритм, найти собственные числа симметричной матрицы. В качестве тестового задания выбрать матрицу 3его порядка с известными собственными 
+числами. При выводе результатов должно отслеживаться как выбираются индексы k и l для матриц вращения.</b></p>
+<p>&nbsp;</p>
+
+<p align="center"><i><a href="test/TEST9.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+
+<p>&nbsp;     
+
+        </td>
+        <td width="15%"></td>
+
+        </tr>
+
+</table>
+
+
+
+
+<body>
+</body>
+</html>

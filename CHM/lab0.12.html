@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 12</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor=>
+<table width="100%" border="0">
+  <tr>
+   <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+    <td width="15%"></td>
+   <td>
+          
+<h3 align="center">&nbsp;</h3>
+        <h3 align="center"><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 12 </b>
+		<br>12.1. РЕШЕНИЕ НЕЛИНЕЙНЫХ КРАЕВЫХ ЗАДАЧ ДЛЯ УРАВНЕНИЙ ВТОРОГО ПОРЯДКА МЕТОДОМ ПРИСТРЕЛКИ</h3>
+ 
+
+
+<p> Дано уравнение<b><i> y&#8242&#8242 = F(x,y,y&#8242).</i></b>&#8195 &#8195 <b>(12.1)</b></p> 
+
+<p>Требуется найти решение этого уравнения на отрезке [a,b] , удовлетворяющее краевым условиям <i><b>y(a) = <i>y</i><small><sub>a</sub></small></i>, y(b) = <i>y</i><small><sub>b</sub></small></i>.</i></b> &#8195<b>(12.2)</b></p> 
+
+<p>Предполагается , что решение краевой задачи существует и единственно.</p>
+<p>Приведем уравнение второго порядка (1) к эквивалентной системе уравнений первого порядка : <img src="images/image11008.gif" align="middle">. &#8195 &#8195 <b>(12.3)</b></p> 
+
+<p>Краевые условия (2) заменим начальными<i><b> y(a)=<i>y</i><small><sub>a</sub></small></i>, z(a) = w </a></b>&#8195 <b>(12.4)</b>, где  - параметр задачи, который нужно подобрать так, чтобы решение задачи Коши (3), (4) совпало с решением краевой задачи (1), (2).</p>
+
+<p>Задача (1),(2)  сводится  к решению задачи Коши для системы уравнений (3) с начальными условиями (4). Искомое значение параметра  находится  из условия <i><b> y(b,w<small><sup>&#10035</sup></small>)=<i>y</i><small><sub>b</sub></small></i></b> .</p>
+
+<p>Для решения задачи  (3),(4) используем метод Рунге-Кутта второго порядка точности .</p>
+<p>Для системы общего вида  <img src="images/image11019.gif" align="middle"> </p>
+
+<p>формулы Рунге-Кутта записываются, например, следующим образом :</p>
+<p> <img src="images/image11021.gif" align="middle">,<img src="images/image11023.gif" align="middle">,</p> 
+<p><img src="images/image11025.gif" align="middle">,</p>
+<p><img src="images/image11027.gif" align="middle"> , &#8195 &#8195 <b>(12.5)</b></p>  
+ <p><img src="images/image11029.gif" align="middle">  ,<img src="images/image11031.gif" align="middle">.</p>
+<p>&nbsp;</p>
+<p>Задачу (3),(4) решаем по следующему алгоритму:</p>
+<p>1.   Используя формулы (5) с различными значениями параметра  <b><i> w </b></i>   определяем интервал<i><b> (w<small><sup>-</sup></small>,w<small><sup>+</sup></small>)</i></b> , в котором должно находиться искомое значение<i><b> w<small><sup>&#10035</sup></small></i></b>. Величины <i><b>w<small><sup>-</sup></small></i></b> и <i><b> w<small><sup>+</sup></small> </i></b>подбираются так, чтобы выполнялись условия <i><b> y(b,w<small><sup>-</sup></small>) < <i>y</i><small><sub>b</sub></small>, y(b,w<small><sup>+</sup></small>) > <i>y</i><small><sub>b</sub></small> </i></b>
+  .&#8195 &#8195<b>(12.6)</b></p>
+
+<p>2.   Уточняем <i><b> w<small><sup>&#10035</sup></small></i></b>  делением интервала <i><b> (w<small><sup>-</sup></small>,w<small><sup>+</sup></small>)</i></b> пополам до достижения правого граничного условия с заданной точностью:<i><b> |y(b,w<small><sup>&#10035</sup></small>) - <i>y</i><small><sub>b</sub></small>| < &#949</i></b>.</p>
+
+<p>При этом выбираем всегда ту половину отрезка в качестве нового интервала, <i><b> (w<small><sup>-</sup></small>,w<small><sup>+</sup></small>)</i></b> для которой выполняется условие (6).</p>
+<p>&nbsp;</p>
+
+<p><b>Пример для самостоятельного решения.</b></p>
+<p>Найти решение уравнения <img src="images/image11046.gif" align="middle">, описывающего нелинейные колебания маятника, <i><b>l</i></b> – длина маятника ,<b><i> l </i></b>=10, <i><b>g</i></b> - ускорение свободного падения,<i><b> g </i></b>=9.81 м/сек2,
+<i><b> &#966 </i></b>-угол отклонения от вертикали, <i><b>- &#960 &#8804 &#966 &#8804 &#960 </i></b>.</p>
+
+<p>Решение должно удовлетворять краевым условиям</p>  
+<p> <img src="images/image11052.gif" align="middle">.&#8195 &#8195<b>(12.7)</b></p>                                   <p>Уравнение привести к системе</p> 
+  <p> <img src="images/image11054.gif" align="middle">.&#8195 &#8195<b>(12.8)</b></p>                                                                                                   
+<p>Требуется определить какую скорость должен иметь маятник в точке равновесия <i><b>&#966 = 0 </i></b>в момент<b><i> t </b></i> = 0, чтобы в момент<b><i> t</b></i> = 1 он отклонился на угол <img src="images/image11048.gif" align="middle">  = <img src="images/image11056.gif" align="middle">.</p>
+<p>Краевые условия (7) заменить на начальные  (0)=0 , z(0)=w с неизвестным параметром w и решать задачу предложенным выше алгоритмом.</p>
+
+<p>&nbsp;</p>  
+<h3 align="center">12.2. РЕШЕНИЕ ЛИНЕЙНЫХ КРАЕВЫХ ЗАДАЧ С ИСПОЛЬЗОВАНИЕМ МЕТОДА ПРОГОНКИ</b></p></h3>
+<p>&nbsp;</p>
+
+<p>Рассматривается линейная краевая задача вида:</p>
+    <p> <i><b> p(x)y&#8242&#8242 + q(x)y&#8242 + r(x)y = f(x), &#8195 x &#8712 [<i><b> x<sub><small>0</small></sub></b></i>, X] </i></b></p>
+<p><i><b>&#945<sub><small>0</small></sub> y(x<sub><small>0</small></sub>) + &#945<sub><small>1</small></sub> y&#8242(x<sub><small>0</small></sub>) = A; </i></b> &#8195 &#8195<b>(13.1)</b> </p> 
+<p><i><b>&#946<sub><small>0</small></sub> y(X) + &#946<sub><small>1</small></sub> y&#8242(X) = B. </i></b> </p>  
+     
+                                                       
+<p>Выбираем систему равностоящих узлов<i><b> x<sub><small>i</small></sub>= x<sub><small>0</small></sub>+ih</i></b> , i=0,…,N  с шагом <br>h=(X-<i><b> x<sub><small>0</small></sub></b></i>)/N. </p>
+
+<p>В  каждом внутреннем узле <i><b> x<sub><small>i</small></sub></b></i>, i=1,…,N-1 заменяем дифференциальное уравнение конечно-разностным,
+применяя центральную аппроксимацию производных</p>
+       <p><img src="images/image13014.gif" align="bottom">,</p>
+             <p><img src="images/image13016.gif" align="bottom">.</p>
+<p>Производные в граничных условиях заменяем, используя левую и правую аппроксимацию </p>
+     <p> <img src="images/image13018.gif" align="bottom">,<img src="images/image13020.gif" align="bottom">  </p>
+
+<p>В результате получаем систему  алгебраических уравнений вида (2). Решаем ее методом прогонки ,
+задав значение N=10,20.</p>
+<p>Для оценки погрешности решения  краевой задачи (1) в точке применяем правило Рунге</p>
+  <p> <img src="images/image13022.gif" align="bottom">, где<i><b> y(<i><b> x<sub><small>i</small></sub></b></i>)</i></b> - значение точного решения краевой задачи (1) в точке <i><b> x<sub><small>i</small></sub></b></i>, а <i><b> y&#8242<sub><small>i</small></sub></i></b> и <i><b>y&#8242&#8242<sub><small>i</small></sub></i></b> значения приближенных решений в той же точке, полученных для N и 2N соответственно.</p>
+<p>Если заданная точность не достигнута, удваиваем число точек.</p>
+
+<p>Прогонка – метод решения систем линейный алгебраических уравнений.</p>
+
+
+<p>1.   Система уравнений:</p>
+
+  <p> <i><b> B<sub><small>0</small></sub> y<sub><small>0</small></sub> + C<sub><small>0</small></sub> y<sub><small>1</small></sub> = F<sub><small>0</small></sub> , B<sub><small>0</small></sub> &#8800 0 </i></b></p>
+<p> <i><b>A<sub><small>i</small></sub> y<sub><small>i-1</small></sub> + B<sub><small>i</small></sub> y<sub><small>i</small></sub> + C<sub><small>i</small></sub> y<sub><small>i+1</small></sub> = F<sub><small>i</small></sub> , i = 1,...,N-1</i></b>&#8195 &#8195<b>(13.2)</b></p>
+<p> <i><b>A<sub><small>N</small></sub> y<sub><small>N-1</small></sub> + B<sub><small>N</small></sub> y<sub><small>N</small></sub> = F<sub><small>N</small></sub> , B<sub><small>N</small></sub> &#8800 0</i></b></p>           
+                   
+
+<p>2.   Метод  решения  полученной системы -  прогонка.</p>
+  <p> Прямой ход:</p>
+<p><i><b> L<sub><small>0</small></sub> = - C<sub><small>0</small></sub> / B<sub><small>0</small></sub>, K<sub><small>0</small></sub> = F<sub><small>0</small></sub> / B<sub><small>0</small></sub>;</i></b></p>
+
+     <p>для   i =1,…,N-1   вычисляем </p> 
+<p><i><b> L<sub><small>i</small></sub> = - C<sub><small>i</small></sub> / r, K<sub><small>i</small></sub> = (F<sub><small>i</small></sub> - A<sub><small>i</small></sub><sup>&#10035</sup>K<sub><small>i-1</small></sub>)/r,</i></b></p>
+ 
+<p><i><b> где r = (B<sub><small>i</small></sub> + A<sub><small>i</small></sub><sup>&#10035</sup>L<sub><small>i-1</small></sub>).</i></b></p>
+             
+<p>Обратный ход:</p>
+            
+<p><i><b> y<sub><small>N</small></sub> = (F<sub><small>N</small></sub> - A<sub><small>N</small></sub><sup>&#10035</sup>K<sub><small>i-1</small></sub>) / (B<sub><small>N</small></sub> + A<sub><small>N</small></sub><sup>&#10035</sup>L<sub><small>N-1</small></sub>),</i></b></p> 
+
+     <p>для    i =  N-1,…,0     вычисляем</p>        
+
+ <p><i><b> y<sub><small>i</small></sub> = L<sub><small>i</small></sub> y<sub><small>i+1</small></sub> + K<sub><small>i</small></sub>.</p>
+
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST12.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+
+
+<p>&nbsp;</p>
+     </td>
+        <td width="15%"></td>
+
+        </tr>
+
+</table>
+
+
+
+
+<body>
+</body>
+</html>

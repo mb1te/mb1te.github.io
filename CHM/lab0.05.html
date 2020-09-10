@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 5</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<table width="100%" border="0">
+  <tr>
+         <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+  <td width="15%">&nbsp;</td>
+   <td>
+     <p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+<p class=MsoNormal align=center style='text-align:center'>
+<b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 5<o:p></o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>СРЕДНЕКВАДРАТИЧЕСКОЕ ПРИБЛИЖЕНИЕ ФУНКЦИЙ. МЕТОД НАИМЕНЬШИХ КВАДРАТОВ (МНК)</b></p>
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p>Рассмотренная в лабораторных работах 2 и 3 концепция аппроксимации основана на удовлетворении аппроксимирующим объектом некоторых заранее известных точек. Такой подход не всегда разумен, например, в таких практических задачах, когда данные известны с небольшой точностью (это, например, задачи экономики – построение тренда в экономической динамике). К тому же в задачах интерполирования приближение иногда достигается только вблизи узлов . По этой причине рассмотрим иную концепцию приближения. Будем строить приближение не по точкам, а в среднем по норме. </p>
+
+<p>Пусть известна некоторая функция  <i>y</i>(<i>x</i>) для которой нужно найти приближение, а также некоторые функции <i>&phi;</i>(<i>x</i>), причем все эти функции принадлежат линейному нормированному пространству. Рассматриваются 2 задачи:</p>
+
+<p>1. По заданному <i>&epsilon;</i>>0 найти такие функции <i>&phi;</i>(<i>x</i>), чтобы выполнялось для любого <i>x</i>: ||<i>y</i>(<i>x</i>)-<i>&phi;</i>(<i>x</i>)||<i><&epsilon;</i>.</p>
+
+<p>2. Найти наилучшее приближение, т.е. такую 
+<img src="images/image401.gif" align="bottom">, чтобы 
+<img src="images/image402.gif" align="bottom">.</p>
+
+<p>Доказывается, что в любом линейном нормированном пространстве при линейной аппроксимации когда,</p>
+
+<p align="center">
+<img src="images/image403.gif"></p>
+
+<dl>где <i>&phi;<small><sub>k</sub></small></i>(<i>x</i>) - линейно независимые функции, существует наилучшее приближение.</dl> 
+
+<p>Рассмотрим  гильбертово пространство <i>L<small><sub>2</sub></small></i>.</p>
+
+<p>Пусть аппроксимация осуществляется функцией <i>&phi;</i>(<i>x</i>). Тогда составим функционал <i>L</i></p>
+
+<p><table align="center" id="table1">
+  <tr>
+<td>
+<img src="images/image404.gif" ></td>
+<td> &nbsp; &nbsp; <b>(*)</b></td>
+</tr></table></p>
+
+<p>Нужно найти минимум этого функционала. Т.к. параметрами являются коэффициенты <i>a<small><sub>k</sub></small></i>, минимизировать такой функционал можно, используя необходимое условие экстремума функции многих переменных: равенство нулю частных производных. Тогда дифференцируя <i>L</i>(<i>a<small><sub>k</sub></small></i>) по <i>a<small><sub>k</sub></small></i> и приравнивая эти производные нулю, получаем такие равенства:</p>
+
+<p align="center"><img src="images/image405.gif" align="middle" >&nbsp;&nbsp;&nbsp; (1)</p>
+
+
+<p>Из этой системы можно найти <i>a<small><sub>m</sub></small></i>, &nbsp; <i>m</i>=1,...,<i>n</i>. (1) – неоднородная С.Л.А.У., критерием единственности решения (1) является неравенство нулю определителя Грамма. Этим доказывается существование и единственность наилучшего приближения в <i>L<small><sub>2</sub></small></i>, которое называется <b>среднеквадратичным приближением.</b></p> 
+
+<p>Если кроме линейной независимости, поставить условие ортонормированности, тогда (1) сильно упрощается. Получим:</p> 
+
+<p>
+<div align="center">
+  <table id="table3">
+    <tr>
+      <td>
+        <img src="images/image406.gif"></td>
+    <td> &nbsp; и <i>a<small><sub>m</sub></small></i></i> = (<i>&phi;<small><sub>m</sub></small></i>, <i>y</i>)</td>
+    </tr>
+  </table>
+  </p>
+  
+</div>
+<p>К тому же, если система функций <i>&phi;<small><sub>k</sub></small></i> полная и ортонормированная (образует базис в данном пространстве), то  из равенства Парсеваля:</p>
+
+<p align="center">
+<img src="images/image407.gif"></p>
+
+<dl>следует, что при <i>n</i> стремяцийся к &infin;, норма погрешности убывает неограниченно, и возможна аппроксимация с любой точностью. На практике чаще всего используется вариант <i>&phi;<small><sub>k</sub></small></i>(<i>x</i>)=<i>x<small><sup>k</sup></small></i> , но из вышесказанного следует, что лучше в качестве функций <i>&phi;<small><sub>k</sub></small></i>(<i>x</i>) использовать множество ортогональных многочленов.</dl>
+
+
+
+<p>&nbsp;</p>
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>Метод наименьших квадратов.<o:p></o:p></b></p>
+
+<p>Рассмотрим таблично-заданную вещественную функцию, заданную <i>N</i> точками (<i>x<small><sub>i</sub></small></i>,<i>y<small><sub>i</sub></small></i>), при <i>i</i>=1,..,<i>N</i> . Для пространства таких функций введем понятие скалярного произведения и нормы по аналогии с <i>L<small><sub>2</sub></small></i>. Назовем скалярным произведением:</p>
+
+<p align="center">
+<img src="images/image408.gif"></p>
+
+<dl>где <i>&rho;<small><sub>i</sub></small></i>>0- вес скалярного произведения. Тогда</dl>
+
+<p align="center">
+<img src="images/image409.gif"></p>
+ 
+<p>Условия наилучшего среднеквадратичного приближения получим, минимизируя норму разности  величин <i>y<small><sub>i</sub></small></i> и <i>&phi;</i>(<i>x<small><sub>i</sub></small></i>), т.е.</p> 
+
+<p align="center">
+<img src="images/image410.gif"></p>
+
+<p>Причём в качестве <i>&phi;</i>(<i>x<small><sub>i</sub></small></i>) - аппроксимирующей функции берем, как и прежде, линейную комбинацию:</p>
+
+<p align="center">
+<img src="images/image411.gif"></p>
+
+<p>Тогда нахождение величин <i>a<small><sub>k</sub></small></i> сводится к минимизации функционала:</p>
+
+<p align="center"><img src="images/image412.gif" align="middle"> &nbsp; &nbsp; <b>(2)</b>, где <i>N</i>- количество точек</p>
+
+<p>Эта задача аналогична ранее решенной задачи о среднеквадратичном приближении, рассмотренной в предыдущем параграфе. Значит, ее решение сводится к  системе (1).</p>
+
+<p>Если в качестве обобщенного многочлена выбрать обычный многочлен:</p>
+
+<p align="center">
+<img src="images/image413.gif"></p>
+
+<dl>то получим</dl> 
+
+<p align="center"><img src="images/image414.gif" align="middle"> (3)</p>
+
+<p>Однако практически чаще всего можно найти минимум (2) используя необходимое условие экстремума функции <i>n</i> переменных: &part;<i>F</i>/&part;<i>a<small><sub>k</sub></small></i>=0, <i>k</i>=1,...,<i>n</i>.
+
+<p>В качестве примера рассмотрим использование многочлена для аппроксимации таблично-заданной функции:</p>
+ 
+<p><a href="lab05.1.html"><i>Пример 1</a></i></p>
+<p><a href="lab05.2.html"><i>Пример 2</a></i></p>
+
+<p><b>Задание. По любому произвольно задаваемому набору точек построить среднеквадратическое приближение методом наименьших квадратов для следующих функций:</b></p>
+
+<p>1. линейные функции <i>y</i>=<i>a</i><small><sub>0</sub></small>+<i>a</i><small><sub>1</sub></small><i>x</i> (использовать формулы (4) для <i>n</i>=1)</p>
+
+<p>2. квадратичные функции <i>y</i>=<i>a</i><small><sub>0</sub></small>+<i>a</i><small><sub>1</sub></small><i>x</i>+<i>a</i><small><sub>2</sub></small><i>x</i><small><sup>2</sup></small> (использовать формулы (4) для <i>n</i>=2)</p>
+
+<p>3. степенные функции <i>y</i>=<i>ax<small><sup>b</sup></small></i> (использовать формулы (5))</p>
+
+<p>Очевидно, что график аппроксимирующей функции должен находиться внутри выпуклой оболочки, образованной точками.</p>
+
+<p>Для каждого рассматриваемого  набора точек, определять в каком случае приближение оптимально. Оптимальность характеризуется минимумом стандартного среднеквадратического отклонения.</p>
+<p>&nbsp;</p>
+<p>Посмотреть пример выполнения <i> <a href="example/4.xls">заданий <b>1,2,3</b> в Microsoft Excel</a></i>.</p>
+<p>&nbsp;</p>
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.05/ex1.html">задания на Java </a></i>.</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST5.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+
+</body>
+
+        
+
+        </td>
+        <td width="15%">&nbsp;</td>
+        </tr>
+</table>
+
+<body>
+</body>
+</html>

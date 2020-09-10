@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 2</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<table width="100%" border="0">
+  <tr>
+    <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td>
+  </tr>
+  <tr>
+  <td width="15%">&nbsp;</td>
+<td>
+        <p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>ЛАБОРАТОРНАЯ РАБОТА 2 <br> ИНТЕРПОЛЯЦИОННЫЙ МНОГОЧЛЕН В ФОРМАХ ЛАГРАНЖА И НЬЮТОНА<o:p></o:p></b></p>
+
+<p>Пусть задана функция <i>f</i>(<i>x</i>) и известны ее значения в некоторых точках <i>x<small><sub>i</sub></small></i>: <i>y<small><sub>i</sub></small></i>=<i>f</i>(<i>x<small><sub>i</sub></small></i>), &nbsp; &nbsp; <i>i</i>=0,<i>n</i>.</p>
+
+<p>Поставим задачу найти другую функцию <i>g</i>(<i>x</i>,<i>a</i><small><sub>0</sub></small>,...,<i>a</i><small><sub><i>n</i></sub></small>), такую, что она совпадает с искомой функцией в выбранных точках.</p>
+
+
+
+
+
+ <a href="#" class="tt">&#8195Задача интерполирования
+   <span class="tooltip">
+    <span class="top"></span>
+    <span class="middle">Если поиск констант функции ai в функции g(x,a0,...,an) осуществляется из равенств f(xi)=g(xi,a0,...,an), то такая задача называется задачей интерполирования, а точки xi – называются узлами интерполяции. </span>
+    <span class="bottom"></span>
+   </span>
+  </a>
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Применение интерполирования возможно  в двух случаях:</p>
+
+<p>1. Функция <i>f</i>(<i>x</i>) известна, но имеет сложный вид, поэтому для дальнейших действий с ней лучше найти интерполирующую функцию из более простого класса, например, многочлен.</p>
+
+<p>2. Функция  <i>f</i>(<i>x</i>) является таблично заданной функцией, т.е. фактически задана <i>(n+1)</i> пара чисел (<i>x<small><sub>i</sub></small></i>,<i>y<small><sub>i</sub></small></i>) и нужно построить непрерывную функцию <i>g</i>(<i>x</i>), проходящую через эти точки. Такие задачи часто используются в задачах статистики и в некоторых  экспериментальных задачах, когда обрабатываются данные эксперимента.</p>
+
+<p>При этом, если ставится задача найти значение в точке <i>x</i>&isin;[min{<i>x<small><sub>i</sub></small></i>},max{<i>x<small><sub>i</sub></small></i>}] - то это задача интерполирования, если же <i>x</i>&#x2209;[min{<i>x<small><sub>i</sub></small></i>},max{<i>x<small><sub>i</sub></small></i>}] -экстраполирование.</p>
+
+<p>Условие прохождения интерполирующей функции через узлы называется <b>основным условием интерполирования</b>.</p>
+
+
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>1. Интерполяционный многочлен  в форме Лагранжа.<o:p></o:p></b></p>
+
+<p>Если записать функцию <i>g</i>(<i>x</i>,<i>a</i><small><sub>0</sub></small>,...,<i>a</i><small><sub><i>n</i></sub></small>) в таком виде:</p>
+<p align="center"><img src="images/image201.gif"></p>
+<p>то (1) – называется <b>интерполяционным многочленом Лагранжа</b>.</p>
+    
+
+
+
+<p> Основное условие интерполирования выполняется за счет специального выбора функций <i>Ф<small><sub>i</sub></small></i>(<i>x</i>) , так, чтобы выполнялось условие:</p>
+
+<p align="center">
+<img src="images/image202.gif"></p>
+
+<p>Пример: Запишем многочлен (1) для случая трёх узлов (<i>x</i><small><sub>0</sub></small>, <i>y</i><small><sub>0</sub></small>), (<i>x</i><small><sub>1</sub></small>, <i>y</i><small><sub>1</sub></small>), (<i>x</i><small><sub>2</sub></small>, <i>y</i><small><sub>2</sub></small>).</p>
+
+<p align="center">
+<img src="images/image203.gif"></p>
+
+<p><i><b>Задание 1.</b></i></p>  
+
+<p>1) Произвольно выбрать 5 точек с абсциссами от -1 до 1 и ординатами от 0 до 1 и построить интерполяционный многочлен Лагранжа. Какой степени многочлен будет построен?</p>
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.02/ex1.html">задания</b> на Java </a></i>.</p>
+
+<p>2) Аппроксимировать заданную функцию <i>f</i>(<i>x</i>) многочленом <i>L<small><sub>n</sub></small></i>(<i>x</i>),</p> 
+
+<p><i>f</i>(<i>x</i>) = 1/(1+<i>dx</i><small><sup>2</sup></small>), &nbsp; &nbsp; <i>x</i>&#8712;[-1,1];</p>
+
+<p><i>d</i>=10+<i>k</i>, &nbsp; &nbsp; <i>k</i>– номер студента в списке;</p>
+
+<dl>используя:</dl>
+
+<p>а) равномерное разбиение при <i>n</i> = 4; 10; 20; при этом</p>  
+
+<p><i>x<small><sub>i</sub></small></i>=-1+<i>ih</i>, &nbsp; &nbsp; <i>h</i>=2/<i>n</i>, &nbsp; &nbsp; <i>i</i>= 0,1,..,<i>n</i>; &nbsp; &nbsp; &nbsp;<b>(2)</b>
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.02/ex2a.html">задания</b> на Java </a></i>.</p>
+
+<p>б) узлы интерполяции - нули многочлена Чебышева 1-го рода <i>T</i><small><sub><i>n</i>+1</sub></small>(<i>x</i>):</p>
+
+<p><i>x<small><sub>i</sub></small></i>=cos ((2<i>i</i>+1)&pi;/<i>N</i>), &nbsp; &nbsp; <i>N</i>=2(<i>n</i>+1), &nbsp; &nbsp; <i>i</i>= 0,1,..,<i>n</i>; &nbsp; &nbsp; <b>(3)</b></p>
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.02/ex2b.html">задания</b> на Java </a></i>.</p>
+
+<p><i>Замечание</i>. Критерием правильности работы составленной программы является выполнение условия интерполяции</p>
+
+<p><i>L<small><sub>n</sub></small></i>(<i>x<small><sub>i</sub></small></i>)=<i>f</i>(<i>x<small><sub>i</sub></small></i>), &nbsp; &nbsp; <i>i</i>=0,1,..,<i>n</i>. &nbsp; &nbsp; <b>(4)</b></p>
+
+<p><i><b>Задание 2.</b></i> Используя графическое представление <i>L<small><sub>n</sub></small></i>(<i>x</i>) на [<i>a</i>,<i>b</i>], исследовать сходимость интерполяционного процесса для заданной функции на сетках (2) и (3) и объяснить результаты на основании теорем Фабера и Марцинкевича.</p>
+
+<p><span lang="ru">Открыть пример выполнения</span> 
+<a href="example/2.1.1.xls">задания <b>1</b></a>,<a href="example/2.2.a.xls">задания <b>2.a</b></a>,<a href="example/2.2.b.xls">задания <b>2.b</b></a>
+с помощью <i>Microsoft Excel</i>.</p>
+
+
+<p>&nbsp;</p>
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>2. Интерполяционный многочлен  в форме Ньютона.<o:p></o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'>Разделенные разности<o:p></o:p></b></p>
+
+
+
+
+
+
+ <p>Разделенными разностями нулевого порядка называются значения функций в точке <i>x<small><sub>i</sub></small></i>, т.е. <i>f</i>(<i>x<small><sub>i</sub></small></i>) </p>
+
+
+<p>Если выбрать 2 узла <i>x<small><sub>i</sub></small></i> и <i>x<small><sub>j</sub></small></i>, то разделенной разностью первого порядка называется:</p>
+
+<p align="center">
+<img src="images/image204.gif" ></p>
+
+<p>Разделенные разности произвольного <i>l</i>-го порядка определяются по рекуррентной формуле:</p>
+
+<p align="center">
+<img src="images/image205.gif"></p>
+
+<p>Исходя из данного определения, очевидно, что по любому набору узлов можно составить разделенные разности и записать их в виде таблицы разделенных разностей.</p>
+
+<p>Таблица разделенных разностей:</p>
+
+<p align="center">
+<img src="images/image206.gif"></p>
+
+<p>Посмотреть пример построения раздельных разностей по заданному набору точек <i> <a href="applet/lab0.02/ex3.0.html">на Java </a></i>.</p>
+
+<p> Многочлен вида:</p>
+
+<p align="center"><img src="images/image207.gif" align="middle">&nbsp; &nbsp;(5)</p>
+
+<p>где <i>f</i>(<i>x<small><sub>0</sub></small></i>,...<i>x<small><sub>i</sub></small></i>), <i>i</i>=0,<i>n</i> - разделенные разности, называется <b>интерполяционным многочленом в форме Ньютона</b> или <b>интерполяционным многочленом Ньютона</b>. </p>
+ 
+
+
+<p>Считается, что формулу (5) лучше применять, если необходимо интерполирование с изменяющимся количеством узлов, а форму (1), когда количество узлов постоянно, но нужно интерполировать различные функции.</p>
+
+<p>Во всех ранее рассмотренных формулах <i>x<small><sub>i</sub></small></i> не отсортированы. Если предположить, что все <i>x<small><sub>i</sub></small></i> различны и для любого <i>i</i> выполняется: <i>x<small><sub>i</sub></small></i>< <i>x</i><small><sub>i+1</sub></small>, то (5) называется интерполяционной формулой для интерполирования вперед.</p>
+
+<p>Если же переписать (5) следующим образом:</p>
+
+<p align="center"><i>p<small><sub>n</sub></small></i>(<i>x</i>)=<i>f</i>(<i>x<small><sub>n</sub></small></i>)+(<i>x</i>-<i>x<small><sub>n</sub></small></i>)<i>f</i>(<i>x</i><small><sub><i>n</i>-1</sub></small>,<i>x<small><sub>n</sub></small></i>)+...+(<i>x</i>-<i>x<small><sub>n</sub></small></i>)...(<i>x</i>-<i>x</i><small><sub>0</sub></small>)<i>f</i>(<i>x<small><sub>n</sub></small></i>...<i>x</i><small><sub>0</sub></small>) &nbsp; &nbsp; &nbsp; <b>(5')</b></p>
+
+<dl>то это интерполяционная формула для интерполирования назад.</dl>
+
+<p><b><i>Задание 3.</i></b></p> 
+
+<p>1) Произвольно выбрать те же 5 точек с абсциссами от -1 до 1 и ординатами от 0 до 1, что и в первом задании, построить интерполяционный многочлен  Ньютона и убедиться, что он идентичен многочлену Лагранжа.</p>   
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.02/ex3.1.html">задания</b> на Java </a></i>.</p>
+
+<p>2) Аппроксимировать заданную функцию <i>f</i>(<i>x</i>) интерполяционным многочленом в любой форме при <i>x</i>&#8712;[-1,1]; <i>x<small><sub>i</sub></small></i>=-1+<i>ih</i>, <i>h</i>=2/<i>n</i>, <i>i</i>= 0,1,..,<i>n</i>; <i>n</i>=10,20</p>
+
+<p><i>А</i>) <i>f</i>(</i>x</i>)=|x|, &nbsp; &nbsp; <i>Б</i>) <i>f</i>(<i>x</i>)=<i>x</i><small><sup>3</sup></small>, &nbsp; &nbsp; <i>В</i>) <i>f</i>(<i>x</i>)=cos(&pi;<i>x</i>/2)</p>
+
+<dl>и показать, что в случае <i>А</i> интерполяционный процесс расходится, в случае <i>Б</i>- точное приближение, а в случае <i>В</i>- интерполяционный процесс сходится.( Использовать определение сходимости.)</dl>
+
+<p>Открыть пример выполнения <a href="example/2.2.xls">задания <b>1 и 2</b></a> с помощью <i>Microsoft Excel</i>.</p>
+
+
+<p>Посмотреть пример выполнения заданий на Java: <i> <a href="applet/lab0.02/ex3.2a.html">А</a>, <a href="applet/lab0.02/ex3.2b.html">Б</a>, <a href="applet/lab0.02/ex3.2c.html">В</a></i>.</p>
+
+
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST2.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+
+</body>
+
+<p>&nbsp;</p>
+
+        
+
+        </td>
+        <td width="15%">&nbsp;</td>
+        </tr>
+</table>
+
+</html>

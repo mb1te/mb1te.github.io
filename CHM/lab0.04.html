@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="style1.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Лабораторная работа 4</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body >
+<table width="100%" border="0">
+  <tr>
+       <td bgcolor="#2b2b2b" colspan="3"><center>
+    <ul class="menu">
+            <li><a href="index.html"><font color="white">Главная &nbsp;</font></a></li>
+            <li><a href="">Первый семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.01.html"><font color="white">Лабораторная работа 1 &nbsp;</font></a></li>
+                    <li><a href="lab0.02.html"><font color="white">Лабораторная работа 2 &nbsp;</font></a></li>
+                    <li><a href="lab0.03.html"><font color="white">Лабораторная работа 3 &nbsp;</font></a></li>
+                    <li><a href="lab0.04.html"><font color="white">Лабораторная работа 4 &nbsp;</font></a></li>
+                    <li><a href="lab0.05.html"><font color="white">Лабораторная работа 5 &nbsp;</font></a></li>
+                    <li><a href="lab0.06.html"><font color="white">Лабораторная работа 6 &nbsp;</font></a></li>
+                </ul>
+            </li>
+             <li><a href="">Второй семестр изучения</a>
+                <ul>
+                    <li><a href="lab0.07.html"><font color="white">Лабораторная работа 7 &nbsp;</font></a></li>
+                    <li><a href="lab0.08.html"><font color="white">Лабораторная работа 8 &nbsp;</font></a></li>
+                    <li><a href="lab0.09.html"><font color="white">Лабораторная работа 9 &nbsp;</font></a></li>
+                    <li><a href="lab0.10.html"><font color="white">Лабораторная работа 10 &nbsp;</font></a></li>
+                    <li><a href="lab0.11.html"><font color="white">Лабораторная работа 11 &nbsp;</font></a></li>
+                    <li><a href="lab0.12.html"><font color="white">Лабораторная работа 12 &nbsp;</font></a></li>
+                </ul>
+            </li>
+        </ul>
+    </center>
+    </td></tr>
+  <tr>
+  <td width="15%">&nbsp;</td>
+<td>
+        <center><B>ЛАБОРАТОРНАЯ РАБОТА 4</B></b></p></center>
+<p class=MsoNormal align=center style='text-align:center;text-indent:36.0pt'><B>ИНТЕРПОЛИРОВАНИЕ СПЛАЙНАМИ</B></b></p>
+
+
+<P>Сплайн-интерполяция есть специальный вид многоинтервальной интерполяции, при котором интерполирующий полином обеспечивает не только равенство <i>y</i>(<i>x</i>) значениям y в узлах интерполяции, но и непрерывность заданного числа первых производных на границах частичных интервалов.</P>
+
+<P>Сплайном называют кусочнополиномиальную функцию, определенную на отрезке [<i>a</i>,<i>b</i>] и имеющую на этом отрезке определенное число непрерывных производных. Рассмотрим последовательность точек (<i>x<small><sub>i</sub></small></i>,<i>y<small><sub>i</sub></small></i>), причём для <i>x<small><sub>i</sub></small></i> существует строгая упорядоченность (<i>x</i><small><sub>0</sub></small><<i>x</i><small><sub>1</sub></small><...<<i>x<small><sub>n</sub></small></i>).</P>  
+
+<P>Поставим следующую задачу: провести через эти точки составную кривую <i>s</i>(<i>x</i>), которая называется 
+
+
+<a href="#" class="tt">кубическим сплайном.
+   <span class="tooltip">
+    <span class="top"></span>
+    <span class="middle"> Найденная функция будет называться <u><i>кубическим сплайном</i></u>, если она обладает следующими свойствами:<br>
+	• &nbsp;на каждом <i>i</i>-ом участке [<i>x</i><small><sub><i>i</i>-1</sub></small>,<i>x</i><small><sub>i</sub></small>] <i>
+					s<small><sub>i</sub></small></i>(<i>x</i>) - является кубическим многочленом;<br>
+	• &nbsp;<i>s</i>(<i>x</i>), <i>s&nbsp;'</i>(<i>x</i>) и <i>s&nbsp;"</i>(<i>x</i>) - непрерывны в узлах.</span>
+    <span class="bottom"></span>   </span>  </a>
+</style></P>
+
+
+
+
+<P>Т.к планируется построить многочлен 3-й степени, то <i>s<small><sub>i</sub></small></i>"(<i>x</i>) - линейная функция, следовательно, она проходит через точки (<i>x</i><small><sub><i>i</i>&minus;1</sub></small>,<i>s</i><small><sub><i>i</i>&minus;1</sub></small>) и (<i>x</i><small><sub><i>i</i></sub></small>,<i>s</i><small><sub><i>i</i></sub></small>), где <i>s</i><small><sub><i>i</i>&minus;1</sub></small>=<i>s</i><small><sub><i>i</i></sub></small>"(<i>x</i><small><sub><i>i</i>&minus;1</sub></small>) &nbsp; &nbsp; <i>s</i><small><sub><i>i</i></sub></small>=<i>s</i><small><sub><i>i</i></sub></small>"(<i>x</i><small><sub><i>i</i></sub></small>). Тогда</P>
+
+<p align="center"><img src="images/image304.gif"></p>
+
+<p align="center"><img src="images/image305.gif" /></p>
+
+<P>Константы <i>c</i><small><sub>1</sub></small> и <i>c</i><small><sub>2</sub></small> найдем, используя равенство <i>i</i>-го сплайна в точках <i>x<small><sub>i</sub></small></i> и <i>x</i><small><sub>i&minus;1</sub></small> соответственно <i>y</i><small><sub>i</sub></small>  и <i>y</i><small><sub>i&minus;1</sub></small>. В результате, получим:</P>
+
+<p align="center"><img src="images/image306.gif"></p>
+
+<P>Формула (4) является <i>i</i>-ым кубическим сплайном,  проходящим через точки (<i>x</i><small><sub>i&minus;1</sub></small>,<i>y</i><small><sub>i&minus;1</sub></small>), (<i>x</i><small><sub>i</sub></small>,<i>y</i><small><sub>i</sub></small>) для любых значений <i>s</i><small><sub>i</sub></small> и <i>s</i><small><sub>i&minus;1</sub></small>. Найдем их из условия сращивания в точке <i>x</i><small><sub>i</sub></small>: значение производной <i>i</i>-го и <i>(i+1)</i>-го сплайна должны быть равны (условие гладкости).</P>
+
+<P>В результате, получим уравнение относительно констант <i>s</i><small><sub>i&minus;1</sub></small>, <i>s</i><small><sub>i</sub></small>, <i>s</i><small><sub>i+1</sub></small>.</P>
+
+<p align="center"><img src="images/image307.gif" ></p>
+
+<P>Условий (5) можно записать ровно столько, сколько имеется внутренних точек, т.е. если существует <i>(n+1)</i> точка, то получим <i>(n&minus;1)</i> таких условий, а определить нужно <i>(n+1)</i> константу <i>s</i><small><sub>i</sub></small>. Значит, для получения единственного решения следует дополнить систему (5) какими-либо двумя  условиями.</P>
+
+<P>Рассмотрим классические методы решения этой проблемы:</P>
+
+<P>• &nbsp; <u>Естественный сплайн</u></P>
+
+<P>-  в этом случае полагают <i>s</i><small><sub>0</sub></small>=<i>s</i><small><sub>n</sub></small>=0.</P>
+
+<P>• &nbsp; <u>Квадратичные концы</u></P>
+
+<P>Предположим, что в концах наш сплайн – квадратичная функция, но тогда ее вторая производная – константа, следовательно, можно положить <i>s</i><small><sub>0</sub></small>=<i>s</i><small><sub>1</sub></small> и  <i>s</i><small><sub>n&minus;1</sub></small>=<i>s</i><small><sub>n</sub></small>, что дает два дополнительных условия.</P>
+
+<P>• &nbsp; <u>На концах известны касательные</u></P>
+
+<P>Пусть известна <i>s</i><small><sub>1</sub></small>'(<i>x</i><small><sub>0</sub></small>)=<i>g</i><small><sub>0</sub></small> и <i>s</i><small><sub>n&minus;1</sub></small>'(<i>x</i><small><sub>n</sub></small>)=<i>g</i><small><sub>n</sub></small> тогда</P> 
+
+<p align="center"><img src="images/image308.gif" ></p>
+
+<P>Тогда в точке <i>x</i><small><sub>0</sub></small>:</P> 
+
+<p align="center"><img src="images/image309.gif"></p>
+
+<p align="center"><img src="images/image310.gif"></p>
+
+<P>Аналогично на другом конце в точке <i>x<small><sub>n</sub></small></i>.</P> 
+
+<p align="center"><img src="images/image311.gif"></p>
+
+<P>Эти 2 уравнения дополняют систему (5) в этом случае.</P> 
+
+<P>Для решения системы (5) с трёхдиагональной матрицей используется метод прогонки.</P> 
+
+
+
+<p>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:normal'><i>Приложение к лабораторной работе 4</i></b></p>
+
+
+<p><a href="lab04.1.html"><i>Метод прогонки</a></i></p>
+
+
+
+<P><i><u>Задание:</u></i></P>
+
+<p><i>Решить контрольную систему, коэффициенты которой</i></p>
+
+<p><i>a</i><small><sub><i>j</i></sub></small>=1, &nbsp; &nbsp; <i>b</i><small><sub><i>j</i></sub></small>=-4, &nbsp; &nbsp; <i>c</i><small><sub><i>j</i></sub></small>=1, &nbsp; &nbsp; <i>f</i><small><sub><i>j</i></sub></small>=-12, &nbsp; &nbsp; <i>j</i>=1,...,<i>N</i>-1;</p>
+
+<p><i>k</i><small><sub>1</sub></small>=-0.25 &nbsp; &nbsp; <i>k</i><small><sub>2</sub></small>=-0.25, &nbsp; &nbsp; <i>m</i><small><sub>1</sub></small>=2.5, &nbsp; &nbsp; <i>m</i><small><sub>2</sub></small>=2.5.</p>
+
+<dl><i>Проверить, что точное решение этой системы для любого N: y<small><sub>j</sub></small>=2.</i></dl>
+<p><a href="example/progonka.xls">Пример</a> выполнения этого задания.</p>
+
+
+
+<p>&nbsp;</p>
+<p class=MsoNormal><u><span style='font-size:14.0pt'>Задание к лабораторной работе 4.</span></u></p>
+
+<P>1) Показать, что задавая значения производных в концевых точках, получаем кубический сплайн, который проходит через произвольно расположенные точки.
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.04/ex1.html">задания на Java </a></i>.</p>
+
+<p>2) Задайте равномерное разбиение отрезка [-1,1] и произвольные ординаты этих точек в диапазоне от 0 до 1. Постройте кубическую сплайн-интерполяцию такой функции. (Использовать квадратичные концы и естественный сплайн.)</p><br>
+
+<p>Открыть <a href="example/3.xls">пример</a> выполнения этого задания с помощью <i>Microsoft Excel</i>.</p><br>
+
+<p>Посмотреть пример выполнения <i> <a href="applet/lab0.04/ex2.html">задания на Java </a></i>.</p>
+
+
+<p>&nbsp;</p>
+<p align="center"><i><a href="test/TEST4.htm">Пройти тест</a></i></p>
+<p>&nbsp;</p>
+
+</body>
+<p>&nbsp;</p>       
+ </td>
+        <td width="15%">&nbsp;</td>
+        </tr>
+</table>
+
+
+
+
+<body>
+</body>
+</html>
