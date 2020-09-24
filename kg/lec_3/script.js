@@ -1,24 +1,26 @@
-canvas = document.querySelector("canvas")
-ctx = canvas.getContext("2d")
+'use strict';
+
+var canvas = document.querySelector("canvas")
+var ctx = canvas.getContext("2d")
 
 
-start_x = 30, start_y = 400
+var start_x = 30, start_y = 400
 
-mx = [30, 60, 130, 170, 300, 340, 440, 440]
-my = [350, 325, 320, 270, 270, 320, 325, 400]
+var mx = [30, 60, 130, 170, 300, 340, 440, 440]
+var my = [350, 325, 320, 270, 270, 320, 325, 400]
 
-lcx = 130, lcy = 400
-rcx = 350, rcy = 400
+var lcx = 130, lcy = 400
+var rcx = 340, rcy = 400
 
-wfx = [172, 225, 225]
-wfy = [277, 277, 325]
-start_wfx = 137, start_wfy = 325
+var wfx = [172, 225, 225]
+var wfy = [277, 277, 325]
+var start_wfx = 137, start_wfy = 325
 
-wsx = [235, 296, 334]
-wsy = [277, 277, 325]
-start_wsx = 235, start_wsy = 325
+var wsx = [235, 296, 334]
+var wsy = [277, 277, 325]
+var start_wsx = 235, start_wsy = 325
 
-shift = 0, dx = -3
+var shift = 0, dx = -3
 
 function draw() {
 
@@ -29,7 +31,7 @@ function draw() {
     ctx.beginPath();
     ctx.fillStyle = "black"
     ctx.moveTo(start_x + shift, start_y)
-    for (i = 0; i < mx.length; i++) {
+    for (var i = 0; i < mx.length; i++) {
         ctx.lineTo(mx[i] + shift, my[i])
     }
     ctx.fill();
@@ -51,7 +53,7 @@ function draw() {
     ctx.beginPath()
     ctx.fillStyle = "white"
     ctx.moveTo(start_wfx + shift, start_wfy)
-    for (i = 0; i < wfx.length; i++) {
+    for (var i = 0; i < wfx.length; i++) {
         ctx.lineTo(wfx[i] + shift, wfy[i])
     }
     ctx.fill()
@@ -59,7 +61,7 @@ function draw() {
     ctx.beginPath()
     ctx.fillStyle = "white"
     ctx.moveTo(start_wsx + shift, start_wsy)
-    for (i = 0; i < wsx.length; i++) {
+    for (var i = 0; i < wsx.length; i++) {
         ctx.lineTo(wsx[i] + shift, wsy[i])
     }
     ctx.fill()
@@ -76,19 +78,19 @@ function update() {
 }
 
 function reflect() {
-    len_x = 410
-    for (i = 0; i < mx.length; i++) {
-        mx[i] = len_x - mx[i]
+    var len_x = 440
+    for (var i = 0; i < mx.length; i++) {
+        mx[i] = 30 + len_x - mx[i]
     }
-    for (i = 0; i < wfx.length; i++) {
-        wfx[i] = len_x - wfx[i]
-        wsx[i] = len_x - wsx[i]
+    for (var i = 0; i < wfx.length; i++) {
+        wfx[i] = 30 + len_x - wfx[i]
+        wsx[i] = 30 + len_x - wsx[i]
     }
-    start_x = len_x - start_x
-    lcx = len_x - lcx
-    rxc = len_x - rcx
-    start_wfx = len_x - start_wfx
-    start_wsx = len_x - start_wsx
+    start_x = 30 + len_x - start_x
+    lcx = 30 + len_x - lcx
+    rcx = 30 + len_x - rcx
+    start_wfx = 30 + len_x - start_wfx
+    start_wsx = 30 + len_x - start_wsx
     dx *= -1
 }
 start()
