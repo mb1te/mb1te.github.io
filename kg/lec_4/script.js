@@ -32,12 +32,14 @@ function draw_spline() {
     x_coord[len] = x_coord[len - 1]
     y_coord[len] = y_coord[len - 1]
     var num = 0
-    for(var i = 2; i < 2 * len; i += 2) {
-        var dx = x_coord[i / 2 + 1] - x_coord[i / 2]
-        var dy = y_coord[i / 2 + 1] - y_coord[i / 2]
-        num += Math.sqrt(dx * dx + dy * dy);
-        //console.log(num)
-    }
+    // for(var i = 2; i < 2 * len; i += 2) {
+    //     var dx = x_coord[i / 2 + 1] - x_coord[i / 2]
+    //     var dy = y_coord[i / 2 + 1] - y_coord[i / 2]
+    //     num += Math.sqrt(dx * dx + dy * dy);
+    //     //console.log(num)
+    // }
+    // console.log(num)
+    num = 100
     for (var i = 1; i < x_coord.length - 2; i++) {
         var a = []
         var b = []
