@@ -5,14 +5,14 @@
     <title>Lab 2</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="start()">
     <div class="container">
         <canvas width="1000" height="700"></canvas>
         <div class="control-panel" height="300px">
-            Сдвиг по OX: <input type="range" name="x-shift" min="-100" max="100" value="0"> <br>
-            Сдвиг по OY: <input type="range" name=y-shift min="-100" max="100" value="0"> <br>
-            Масштаб: <input type="range" name="scale" min="1" max="100" value="50"> <br>
-            Поворот: <input type="range" name="rotation" min="0" max="360" value="0"> <br>
+            Сдвиг по OX: <input type="range" id="x-shift" min="-1000" max="1000" value="0" oninput="start()"> <br>
+            Сдвиг по OY: <input type="range" id="y-shift" min="-1000" max="1000" value="0" oninput="start()"> <br>
+            Масштаб: <input type="range" id="scale" min="1" max="10000" value="5000" oninput="start()"> <br>
+            Поворот: <input type="range" id="rotate" min="0" max="360" value="0" oninput="start()"> <br>
         </div>
     </div>
     <script src="script.js"></script>
