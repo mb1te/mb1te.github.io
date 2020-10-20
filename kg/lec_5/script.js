@@ -64,4 +64,4 @@ function start() {
     draw_ellipse(ox + cx, oy + cy, a, b);
 }
 
-start();
+start()
