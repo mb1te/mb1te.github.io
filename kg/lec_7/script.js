@@ -37,6 +37,10 @@ function vec_mult(x1, y1, x2, y2) {
     return x1 * y2 - x2 * y1;
 }
 
+function get_len(x1, y1, x2, y2) {
+    return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+}
+
 function convex_hull() {
     var min_ind = 0;
     for (var i = 1; i < x.length; i++) {
@@ -52,8 +56,8 @@ function convex_hull() {
     }
     for (var i = 1; i < x.length - 1; i++) {
         for (var j  = i + 1; j < x.length; j++) {
-            var mul = vec_mult(x[i] - x[0], y[i] - y[0], x[j] - x[i], y[j] - y[i]);
-            if (mul < 0) {
+            var mul = vec_mult(x[i] - x[0], y[i] - y[0], x[j] - x[0], y[j] - y[0]);
+            if (mul < 0 || mul == 0 && get_len(x[0], y[0], x[i], y[i]) > get_len(x[0], y[0], x[j], y[j])) {
                 x[i] += x[j];
                 x[j] = x[i] - x[j];
                 x[i] -= x[j];
@@ -66,7 +70,7 @@ function convex_hull() {
     var st_x = [x[0], x[1]], st_y = [y[0], y[1]];
     for (var i = 2; i < x.length; i++) {
         var len2 = st_x.length;
-        while(len2 > 2 && vec_mult(st_x[len2 - 1] - st_x[len2 - 2], st_y[len2 - 1] - st_y[len2 - 2], x[i] - st_x[len2 - 1], y[i] - st_y[len2 - 1]) < 0) {
+        while(len2 >= 2 && vec_mult(st_x[len2 - 1] - st_x[len2 - 2], st_y[len2 - 1] - st_y[len2 - 2], x[i] - st_x[len2 - 1], y[i] - st_y[len2 - 1]) < 0) {
             st_x.pop();
             st_y.pop();
             len2 = st_x.length;
