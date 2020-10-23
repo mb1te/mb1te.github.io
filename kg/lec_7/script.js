@@ -8,7 +8,7 @@ var len = 0;
 
 function put_pixel(x, y) {
     ctx.fillStyle = "black";
-    ctx.fillRect(x, y, 5, 5);
+    ctx.fillRect(x - 3, y - 3, 6, 6);
 }
 
 function windowToCanvas(canvas, x, y) {
