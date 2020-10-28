@@ -91,6 +91,7 @@ function in_triangle(p, a, b, c) {
 
 function triangulate() {
     while (len > 3) {
+        var change = false;
         for (var i = 1; i < len - 1; i++) {
             var AB = {x: x[i] - x[i - 1], y: y[i] - y[i - 1]};
             var AC = {x: x[i + 1] - x[i - 1], y: y[i + 1] - y[i - 1]};
@@ -102,6 +103,7 @@ function triangulate() {
                 }
             }
             if (chk) {
+                change = true;
                 draw_line(i - 1, i + 1);
                 tr_x[len_tr] = x[i - 1];
                 tr_y[len_tr] = y[i - 1];
@@ -119,6 +121,10 @@ function triangulate() {
                 len--;
                 break;
             }
+        }
+        if (!change) {
+            alert("Триангуляция не выполнена");
+            return;
         }
     }
     i = 1;
