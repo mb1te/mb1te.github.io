@@ -123,7 +123,28 @@ function triangulate() {
             }
         }
         if (!change) {
-            alert("Триангуляция не выполнена");
+            console.log(1);
+            for (var i = 0; i < x.length; i++) {
+                x[i] = old_x[i];
+                y[i] = old_y[i];
+            }
+            var l = 0, r = x.length - 1;
+            while (l < r) {
+                x[l] += x[r];
+                x[r] = x[l] - x[r];
+                x[l] -= x[r];
+                y[l] += y[r];
+                y[r] = y[l] - y[r];
+                y[l] -= y[r];
+                l++, r--;
+            }
+            tr_x = []
+            tr_y = []
+            len_tr = 0;
+            len = x.length;
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            draw_polygon();
             return;
         }
     }
