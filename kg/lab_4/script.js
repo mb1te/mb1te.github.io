@@ -56,7 +56,11 @@ function clear_window() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     x = [];
     y = [];
+    tr_x = [];
+    tr_y = [];
+    len_tr = 0;
     len = 0;
+    is_drawn = false;
 }
 
 function draw_line(i, j) {
