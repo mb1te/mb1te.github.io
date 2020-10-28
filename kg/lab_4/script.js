@@ -9,7 +9,7 @@ var tr_x = [], tr_y = [];
 var len = 0;
 var len_tr = 0;
 var is_drawn = false;
-
+var change = false;
 function put_pixel(x, y) {
     ctx.fillStyle = "black";
     ctx.fillRect(x, y, 6, 6);
@@ -91,7 +91,7 @@ function in_triangle(p, a, b, c) {
 
 function triangulate() {
     while (len > 3) {
-        var change = false;
+        change = false;
         for (var i = 1; i < len - 1; i++) {
             var AB = {x: x[i] - x[i - 1], y: y[i] - y[i - 1]};
             var AC = {x: x[i + 1] - x[i - 1], y: y[i + 1] - y[i - 1]};
@@ -172,6 +172,6 @@ function draw_polygon() {
     ctx.strokeStyle = "red";
     ctx.stroke();
     triangulate();
-    alert("Нажмите на нужное место, чтобы проверить принадлежность точки");
+    if (change) alert("Нажмите на нужное место, чтобы проверить принадлежность точки");
     is_drawn = true;
 }
