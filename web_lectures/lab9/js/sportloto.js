@@ -50,7 +50,7 @@ for (i = 1; i <= 6; i++) {
     row.className = "row";
     for (j = 1; j <= 6; j++) {
         let col = document.createElement('div');
-        col.style = "height: 70px; width: 102px;";
+        col.style = "height: 70px; width: 16%;";
         let btn = document.createElement('button');
         btn.className = "btn btn-primary btn-lg btn-block custom";
         let number = (i - 1) * 6 + j;
