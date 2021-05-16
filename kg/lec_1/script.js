@@ -1,5 +1,5 @@
-canvas = document.getElementById('canvas')
-c = canvas.getContext('2d')
+canvas = document.querySelector("canvas")
+c = canvas.getContext("2d")
 c.fillRect(0, 0, window.innerWidth, window.innerHeight)
 
 c.beginPath()

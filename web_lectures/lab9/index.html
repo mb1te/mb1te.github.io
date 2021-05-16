@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 9</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h3 class="text-center mt-5">Игра "Спортлото 5 из 36"</h3>
+    <h5 class="text-center">Выберите 5 чисел:</h5>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalTitle">Попыток больше нет!</h5>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" onclick="$('#modal').modal('hide')">Закрыть</button>
+              <button class="btn btn-primary" onclick="location.reload()">Попробовать ещё</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sportloto.js"></script>
+</body>
+</html>
